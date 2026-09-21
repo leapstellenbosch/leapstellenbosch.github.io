@@ -227,7 +227,7 @@ section{ position:relative; }
 .hero__label{ margin-top:clamp(2.7rem, 6.5svh, 3.6rem); }
 .hero__title{
   margin-top:clamp(.6rem, 1.6svh, 1.1rem); font-weight:200; font-size:clamp(1.9rem, min(5.2vw, 7svh), 4rem);
-  line-height:1.07; letter-spacing:-.015em; color:#fff; max-width:20ch;
+  line-height:1.07; letter-spacing:-.015em; color:#fff; max-width:20ch; text-wrap:balance;
 }
 .hero__sub{
   margin-top:clamp(.8rem, 2.4svh, 1.5rem); font-weight:300; font-size:clamp(1rem, min(1.6vw, 2.6svh), 1.25rem);
