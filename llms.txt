@@ -27,6 +27,10 @@ LEAP is a research centre in the Department of Economics, Faculty of Economic an
 - {{ m.name }}, {{ m.title }}: {{ m.focus }}
 {%- endfor %}
 
+## Library
+
+{{ site.data.site.library.name }}: {{ site.data.site.library.strap }}. {{ '/research/' | absolute_url }}#library
+
 ## Datasets
 {% for d in site.data.datasets %}
 - {{ d.name }} ({{ d.period }}; {{ d.status }}): {{ d.url }}

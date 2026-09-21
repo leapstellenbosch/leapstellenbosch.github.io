@@ -52,3 +52,23 @@ description: "LEAP's research: current projects, working papers and publications
     </ul>
   </div>
 </section>
+
+<section class="band" id="library" aria-labelledby="library-title">
+  {%- assign lib = site.data.site.library %}
+  <div class="wrap library">
+    <div class="reveal">
+      <p class="label label--accent">Library</p>
+      <h2 class="h2" id="library-title">{{ lib.name }}</h2>
+      <p class="project__strap">{{ lib.strap }}</p>
+      <div class="project__body">{{ lib.body | markdownify }}</div>
+      <p class="library__note">
+        {%- if lib.catalogue_url %}<a class="link" href="{{ lib.catalogue_url }}" rel="noopener">Browse the catalogue</a>{% else %}{{ lib.catalogue_note }}{% endif -%}
+      </p>
+    </div>
+    <dl class="library__facts reveal">
+      {%- for f in lib.facts %}
+      <div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>

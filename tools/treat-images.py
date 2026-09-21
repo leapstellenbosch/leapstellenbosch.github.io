@@ -52,9 +52,11 @@ ARCHIVE = {
 # ---- Home page letters: several sources per letter, one drawn at random on each visit.
 # stem -> (source, crop box as fractions l,t,r,b, rotation in degrees, clockwise negative).
 # The tone follows the letter. Captions live in _data/hero.yml; origins in _sources/hero/SOURCES.md.
-# L maps · E photographs · A handwriting · P printed records
+# L maps · E photographs and pictures · A handwriting · P printed records
 DATA = Path(r"C:\Users\johanf\Dropbox\3 Data")
 AP = DATA / "Archive photos"
+CP = Path(r"C:\Users\johanf\Dropbox\3 Cape Panel")
+HERO_SRC = ROOT / "_sources" / "hero"           # pages rendered from PDFs: see _sources/hero/SOURCES.md
 
 def ap(folder, ref):
     """An archive photograph by its reference number: the file names are long descriptions."""
@@ -78,9 +80,11 @@ HERO = {
         "e-east-london":       (ap("2020", "AG1101"),                                                 (0.00, 0.25, 1.00, 0.92), 0),
         "e-sifting-diamonds":  (ap("Elliot Collection", "E8615"),                                     (0.25, 0.15, 1.00, 1.00), 0),
         "e-wool-wolseley":     (ap("Elliot Collection", "E8110"),                                     (0.00, 0.15, 0.92, 0.93), 0),
+        "e-brandes-cape-town": (CP / "Brandes.jpg",                                                   (0.40, 0.05, 0.80, 1.00), 0),
     },
     "blue": {
         "a-estate-inventory":  (SRC / r"Photos\Website photos\Archive.jpg",                           (0.04, 0.05, 0.86, 0.95), 0),
+        "a-opgaafrol":         (CP / "FirstOpgaafrol.jpg",                                            (0.04, 0.06, 0.94, 0.42), 0),
         "a-estate-letter-1926":(DATA / r"Black inventories\KBN_3-1-1\32-2-36\IMG_0992.JPG",           (0.08, 0.14, 0.96, 0.80), 0),
         "a-cape-police":       (DATA / r"Attestations\Cape Mounted Police\20140107_105717.jpg",       (0.05, 0.18, 0.95, 0.82), -90),
         "a-zar-certificate":   (SRC / r"Photos\Limited Liability\IMG_3344.JPG",                       (0.05, 0.12, 0.98, 0.80), 0),
@@ -90,7 +94,8 @@ HERO = {
         "p-attestation-paper": (SRC / r"Photos\Projects\Living standards.JPG",                        (0.08, 0.14, 0.92, 0.95), 0),
         "p-slave-return-1834": (DATA / r"Valuation rolls\T71.8 Valuation Roll Swellendam\IMG_0629.JPG", (0.04, 0.04, 0.96, 0.72), -90),
         "p-gazette-1830":      (DATA / r"Gazettes\1830 Jan-Dec\IMG_6876.JPG",                         (0.03, 0.05, 0.97, 0.68), 0),
-        "p-bantu-world":       (DATA / r"Bantu World\nf-s-000015-n1\nf-s-000015-n1 (Page 11).png",    (0.02, 0.03, 0.50, 0.72), 0),
+        "p-census-1865":       (HERO_SRC / "census-1865-produce.png",                                 (0.10, 0.06, 0.97, 0.56), 0),
+        "p-bantu-world":      (DATA / r"Bantu World\nf-s-000015-n1\nf-s-000015-n1 (Page 11).png",    (0.02, 0.03, 0.50, 0.72), 0),
         "p-voters-roll":       (DATA / r"Voters Rolls\1870-1909\27\10. Wodehouse\IMG_7306.JPG",       (0.22, 0.10, 0.51, 0.90), 0),
         "p-wages-1909":        (DATA / r"Occupations and wages\Agri data wages 1909\wages198.jpg",    (0.05, 0.05, 0.95, 0.72), 0),
     },

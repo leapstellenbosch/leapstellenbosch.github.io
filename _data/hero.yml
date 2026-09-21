@@ -9,7 +9,7 @@
 #          `python tools/treat-images.py hero`, then add a line here.
 # caption  one short line, no full stop. Give the archive reference where there is one.
 #
-# L maps · E photographs · A handwriting · P printed records
+# L maps · E photographs and pictures · A handwriting · P printed records
 # A letter may have any number of sources. Origins are recorded in _sources/hero/SOURCES.md.
 # TODO Johan: check the captions.
 
@@ -38,10 +38,14 @@ e:
     caption: Sifting diamonds, Kimberley (Western Cape Archives, E8615)
   - image: e-wool-wolseley
     caption: Transporting wool at Wolseley (Western Cape Archives, E8110)
+  - image: e-brandes-cape-town
+    caption: Cape Town below Lion's Head, watercolour by Jan Brandes, 1780s (Rijksmuseum)
 
 a:
   - image: a-estate-inventory
     caption: An estate inventory from the Cape Colony
+  - image: a-opgaafrol
+    caption: The first opgaafrol, the tax census of the Cape settlement
   - image: a-estate-letter-1926
     caption: A letter in a mineworker's estate file, 1926
   - image: a-cape-police
@@ -58,6 +62,8 @@ p:
     caption: Return of slaves and their estimated value, Cape of Good Hope, 1834
   - image: p-gazette-1830
     caption: Cape of Good Hope Government Gazette, January 1830
+  - image: p-census-1865
+    caption: Produce tables in the Census of the Cape Colony, 1865
   - image: p-bantu-world
     caption: The Bantu World, Johannesburg, 1930s
   - image: p-voters-roll

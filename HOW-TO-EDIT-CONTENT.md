@@ -10,7 +10,7 @@ Everything on the site apart from news lives in eight small text files in the `_
 | `_data/projects.yml` | The project sections on the Research page; the first four also appear on the home page |
 | `_data/publications.yml` | Working papers and published articles |
 | `_data/datasets.yml` | The cards on the Data page |
-| `_data/site.yml` | Mission text, slogan, address, email, social accounts |
+| `_data/site.yml` | Mission text, slogan, address, email, social accounts, and the text about the Kris Inwood Library |
 | `_data/hero.yml` | The captions of the archival sources behind the four letters on the home page |
 
 ## The general method

@@ -20,6 +20,7 @@ description: "How to reach LEAP: Schumann Building, Bosman Street, Stellenbosch,
       <div class="contact__block">
         <h2 class="label label--accent">Visit</h2>
         <address>{% for line in s.address.physical %}{{ line }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}</address>
+        <p class="contact__note">The LEAP office, on the fifth floor, also houses <a class="link" href="{{ '/research/' | relative_url }}#library">{{ s.library.name }}</a>.</p>
       </div>
       <div class="contact__block">
         <h2 class="label label--accent">Post</h2>

@@ -56,3 +56,21 @@ links:
   university:
     name: Stellenbosch University
     url: https://www.su.ac.za
+
+# The Kris Inwood Library: a section on the Research page, linked from the Contact page
+library:
+  name: The Kris Inwood Library
+  strap: A reference library of economic history, in the LEAP office
+  body: |
+    In 2019 Kris Inwood, Professor of Economics and History at the University of Guelph in Canada and a member of LEAP's Governing Board, donated his collection of economic history books to LEAP. The books reached Stellenbosch early in 2020, just before the Covid lockdown.
+
+    They now form the Kris Inwood Library, housed in the LEAP office on the fifth floor of the Schumann Building. It is a reference library: the books may be read there, and do not leave the room.
+  catalogue_note: A full catalogue of the library will be published on this page soon.
+  catalogue_url:          # when the catalogue exists, put its address here and the note becomes a link
+  facts:
+    - label: Donated
+      value: "2019"
+    - label: Where
+      value: LEAP office, fifth floor, Schumann Building
+    - label: Use
+      value: Reference only

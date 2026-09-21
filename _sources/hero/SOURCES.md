@@ -18,6 +18,8 @@ Compiled 2026-09-21. Paths are relative to `Dropbox\3 Data\` unless they start w
 | e-east-london | `Archive photos\2020\AG1101 ...tif` | Western Cape Archives, AG Collection |
 | e-sifting-diamonds | `Archive photos\Elliot Collection\E8615 ...tif` | Western Cape Archives, Elliott Collection |
 | e-wool-wolseley | `Archive photos\Elliot Collection\E8110 ...tif` | Western Cape Archives, Elliott Collection |
+| e-brandes-cape-town | `Dropbox\3 Cape Panel\Brandes.jpg` | Watercolour by Jan Brandes; Rijksmuseum, public domain (Johan to confirm the attribution) |
+| a-opgaafrol | `Dropbox\3 Cape Panel\FirstOpgaafrol.jpg` | |
 | a-estate-inventory | `5 LEAP\Photos\Website photos\Archive.jpg` | |
 | a-estate-letter-1926 | `Black inventories\KBN_3-1-1\32-2-36\IMG_0992.JPG` | |
 | a-cape-police | `Attestations\Cape Mounted Police\20140107_105717.jpg` | Rotated 90 degrees |
@@ -26,6 +28,7 @@ Compiled 2026-09-21. Paths are relative to `Dropbox\3 Data\` unless they start w
 | p-attestation-paper | `5 LEAP\Photos\Projects\Living standards.JPG` | |
 | p-slave-return-1834 | `Valuation rolls\T71.8 Valuation Roll Swellendam\IMG_0629.JPG` | Rotated 90 degrees. Filed with the valuation rolls, but the form is a return of slaves, 1 December 1834 |
 | p-gazette-1830 | `Gazettes\1830 Jan-Dec\IMG_6876.JPG` | |
+| p-census-1865 | `_sources/hero/census-1865-produce.png` | Page 21 of `Dropbox\Censuses\1865.pdf` rendered at 170 dpi. Census of the Colony of the Cape of Good Hope, 1865 (Cape Town: Solomon, 1866); HathiTrust scan, public domain, Google-digitised |
 | p-bantu-world | `Bantu World\nf-s-000015-n1\nf-s-000015-n1 (Page 11).png` | |
 | p-voters-roll | `Voters Rolls\1870-1909\27\10. Wodehouse\IMG_7306.JPG` | |
 | p-wages-1909 | `Occupations and wages\Agri data wages 1909\wages198.jpg` | |
@@ -33,9 +36,9 @@ Compiled 2026-09-21. Paths are relative to `Dropbox\3 Data\` unless they start w
 ## Permission
 
 Five photographs and one map come from the Western Cape Archives and Records Service
-(the AG and Elliott collections). Johan's 2015 application to the Archives covered an
-academic manuscript and his personal blog. Whether it extends to the LEAP website is
-for Johan to confirm. The captions credit the Archives with the reference number.
+(the AG and Elliott collections). Johan confirmed on 21 September 2026 that LEAP has
+permission to use them, obtained in 2015. The captions credit the Archives with the
+reference number.
 
 Documents that name private individuals were chosen from before 1930, and only a
 fragment of each is visible through a letter.
