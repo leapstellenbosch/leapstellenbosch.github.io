@@ -38,6 +38,16 @@
   }, { passive: true });
   onScroll();
 
+  /* ---------- Hero letters: tap shows the archival source (hover does it in CSS) ---------- */
+  var letters = document.querySelectorAll(".hero__letter");
+  letters.forEach(function (el) {
+    el.addEventListener("click", function () {
+      var on = el.classList.contains("show");
+      letters.forEach(function (o) { o.classList.remove("show"); });
+      if (!on) el.classList.add("show");
+    });
+  });
+
   /* ---------- Mobile menu ---------- */
   var toggle = document.getElementById("navToggle");
   var menu = document.getElementById("menu");

@@ -20,35 +20,35 @@ description: "LEAP's research: current projects, working papers and publications
   </div>
 </section>
 
-<section class="band band--paper" id="working-papers" aria-labelledby="wp-title">
+<section class="band band--paper" id="publications" aria-labelledby="pubs-title">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="label">Working papers</p>
-      <h2 class="h2" id="wp-title">LEAP working papers</h2>
-      <p class="lede">Published in the Stellenbosch Economic Working Papers series. Team members are in bold.</p>
-    </div>
-    <ul class="papers reveal">
-      {%- for paper in working_papers -%}
-        {%- include paper-row.html paper=paper -%}
-      {%- endfor %}
-    </ul>
-  </div>
-</section>
-
-<section class="band band--maroon" id="publications" aria-labelledby="pubs-title">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="label label--accent">Publications</p>
+      <p class="label">Publications</p>
       <h2 class="h2" id="pubs-title">Published articles</h2>
     </div>
     {%- assign by_year = articles | group_by: "year" | sort: "name" | reverse -%}
     {%- for year in by_year %}
-    <h3 class="pub-year reveal">{{ year.name }}</h3>
-    <ul class="papers papers--dark reveal">
+    <h3 class="pub-year pub-year--paper reveal">{{ year.name }}</h3>
+    <ul class="papers reveal">
       {%- for paper in year.items -%}
         {%- include paper-row.html paper=paper -%}
       {%- endfor %}
     </ul>
     {%- endfor %}
+  </div>
+</section>
+
+<section class="band band--maroon" id="working-papers" aria-labelledby="wp-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="label label--accent">Working papers</p>
+      <h2 class="h2" id="wp-title">LEAP working papers</h2>
+      <p class="lede">Published in the Stellenbosch Economic Working Papers series. Team members are in bold.</p>
+    </div>
+    <ul class="papers papers--dark reveal">
+      {%- for paper in working_papers -%}
+        {%- include paper-row.html paper=paper -%}
+      {%- endfor %}
+    </ul>
   </div>
 </section>

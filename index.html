@@ -6,16 +6,16 @@ description: "LEAP, the Laboratory for the Economics of Africa's Past at Stellen
 {%- assign s = site.data.site -%}
 {%- assign released = site.data.datasets | where: "status", "Released" -%}
 {%- assign working_papers = site.data.publications | where: "type", "working_paper" -%}
+{%- assign articles = site.data.publications | where: "type", "article" -%}
 
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero__inner reveal">
-    <div class="hero__word" aria-hidden="true"><span class="l">L</span><span class="e">E</span><span class="a">A</span><span class="p">P</span></div>
-    <ul class="hero__sources" aria-label="The four archival sources behind the letters">
-      <li><b>L</b>Map of the Orange Free State and Transvaal</li>
-      <li><b>E</b>Share and Claim Exchange, Barberton, 1880s</li>
-      <li><b>A</b>Estate inventory, Cape Colony</li>
-      <li><b>P</b>Constabulary attestation paper, 1901</li>
-    </ul>
+    <div class="hero__word" aria-hidden="true">
+      <span class="hero__letter"><span class="hero__glyph l">L</span><span class="hero__tip l">Map of the Orange Free State and Transvaal</span></span>
+      <span class="hero__letter"><span class="hero__glyph e">E</span><span class="hero__tip e">The Share and Claim Exchange, Barberton, 1880s</span></span>
+      <span class="hero__letter"><span class="hero__glyph a">A</span><span class="hero__tip a">An estate inventory from the Cape Colony</span></span>
+      <span class="hero__letter"><span class="hero__glyph p">P</span><span class="hero__tip p">A Constabulary attestation paper, 1901</span></span>
+    </div>
     <p class="label hero__label">{{ s.name }} · Stellenbosch University</p>
     <h1 class="hero__title" id="hero-title">{{ s.headline }}</h1>
     <p class="hero__sub">We build large historical datasets from African archives and use them to explain the continent's long-run economic development.</p>
@@ -87,10 +87,20 @@ description: "LEAP, the Laboratory for the Economics of Africa's Past at Stellen
   <div class="wrap">
     <div class="section-head section-head--row reveal">
       <div>
-        <p class="label">Working papers</p>
-        <h2 class="h2" id="papers-title">Latest papers</h2>
+        <p class="label">Papers</p>
+        <h2 class="h2" id="papers-title">Latest publications</h2>
       </div>
-      <a class="more" href="{{ '/research/' | relative_url }}#working-papers">All papers</a>
+      <a class="more" href="{{ '/research/' | relative_url }}#publications">All publications</a>
+    </div>
+    <ul class="papers papers--dark reveal">
+      {%- for paper in articles limit: 4 -%}
+        {%- include paper-row.html paper=paper -%}
+      {%- endfor %}
+    </ul>
+
+    <div class="section-head section-head--row section-head--second reveal">
+      <h3 class="h3" id="wp-title">Latest working papers</h3>
+      <a class="more" href="{{ '/research/' | relative_url }}#working-papers">All working papers</a>
     </div>
     <ul class="papers papers--dark reveal">
       {%- for paper in working_papers limit: 4 -%}
@@ -123,6 +133,9 @@ description: "LEAP, the Laboratory for the Economics of Africa's Past at Stellen
 <section class="band--paper su-band" aria-label="Stellenbosch University">
   <div class="wrap su-band__inner reveal">
     <img src="{{ '/assets/img/logos/su-leap-on-light.png' | relative_url }}" alt="Stellenbosch University · LEAP, Laboratory for the Economics of Africa's Past" width="1400" height="269" loading="lazy">
-    <p>{{ s.su_line }}</p>
+    <div>
+      <p>{{ s.su_line }}</p>
+      <p class="su-band__links"><a href="{{ s.links.department.url }}" rel="noopener">{{ s.links.department.name }}</a><a href="{{ s.links.university.url }}" rel="noopener">{{ s.links.university.name }}</a></p>
+    </div>
   </div>
 </section>

@@ -30,6 +30,10 @@ description: "How to reach LEAP: Schumann Building, Bosman Street, Stellenbosch,
         <p><a class="link" href="{{ '/team/' | relative_url }}#johan-fourie">{{ s.director }}</a></p>
       </div>
       <div class="contact__block">
+        <h2 class="label label--accent">Our home</h2>
+        <p><a class="link" href="{{ s.links.department.url }}" rel="noopener">{{ s.links.department.name }}</a><br><a class="link" href="{{ s.links.university.url }}" rel="noopener">{{ s.links.university.name }}</a></p>
+      </div>
+      <div class="contact__block">
         <h2 class="label label--accent">Follow</h2>
         <p>{% for acc in s.social %}<a class="link" href="{{ acc.url }}" rel="me noopener">{{ acc.handle }} on {{ acc.name }}</a>{% unless forloop.last %}<br>{% endunless %}{% endfor %}</p>
       </div>

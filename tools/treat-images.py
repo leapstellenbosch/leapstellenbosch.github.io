@@ -64,15 +64,16 @@ TEAM = {
     "dieter-von-fintel": (SRC / r"Photos\Faces\Dieter.jpg",    0.50, 0.170, 0.78),
     "calumet-links":     (SRC / r"Photos\Faces\Cal.jpg",       0.49, 0.160, 0.80),
     "edward-kerby":      (SRC / r"Photos\Faces\Edward.jpg",    0.50, 0.150, 0.78),
-    "kate-ekama":        (SRC / r"Photos\Faces\KateEkama.JPG", 0.66, 0.520, 0.62),
-    "karl-bergemann":    (SRC / r"Newsletters\2024\LEAP Karl Graduation.jpg", 0.575, 0.27, 0.30),
     # Found online or in the old site's backup: see _sources/headshots/PROVENANCE.md
+    "kate-ekama":           (HEADSHOT_SRC / "kate-ekama.jpg",            0.50, 0.42, 1.00),
+    "karl-bergemann":       (HEADSHOT_SRC / "karl-bergemann.jpg",        0.50, 0.42, 1.00),
     "munashe-chideya":      (HEADSHOT_SRC / "munashe-chideya.jpg",       0.50, 0.27, 0.90),
     "noah-macdonald":       (HEADSHOT_SRC / "noah-macdonald.jpg",        0.53, 0.42, 0.62),
     "etienne-le-rossignol": (HEADSHOT_SRC / "etienne-le-rossignol.jpg",  0.50, 0.42, 1.00),
     "jan-hendrik-pretorius":(HEADSHOT_SRC / "jan-hendrik-pretorius.webp", 0.50, 0.42, 1.00),
 }
 BOARD = {
+    "ada-jansen":          (HEADSHOT_SRC / "ada-jansen.jpg",      0.47, 0.24, 1.00),
     "sophia-du-plessis":   (SRC / r"Photos\Faces\Sophia.jpg",     0.50, 0.180, 0.78),
     "janine-myburgh":      (SRC / r"Governing Board\Janine.jpg",  0.50, 0.340, 0.95),
     "kanshukan-rajaratnam":(SRC / r"Governing Board\Kanshu.png",  0.47, 0.300, 0.95),

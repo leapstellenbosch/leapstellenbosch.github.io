@@ -49,3 +49,25 @@ Nobody. All four have a photo at high confidence.
 ## Backup search notes
 
 Filenames in the zip were searched case-insensitively for: munashe, chideya, noah, macdonald, etienne, rossignol, jan-hendrik, janhendrik, jan_hendrik, pretorius, JH. Only the two files above matched (plus their thumbnail variants). The numbered portrait sets (`uploads/2019/03/LEAP-profiles-*-bw.jpg`, `uploads/2020/02/LEAP-profiles-BW-*.jpg`, `uploads/2023/05/LEAP-May-2023-5-bw.webp`) carry no names and are all 300 to 400 px, so they were not used: matching them to a person would have meant guessing from faces.
+
+## Added 2026-09-21 (second round)
+
+Johan asked for the white-background LEAP portraits of Karl Bergemann and Kate Ekama, and a photo of Ada Jansen.
+
+### karl-bergemann
+
+**File:** `karl-bergemann.jpg` (300 x 300 px, JPEG, black and white)
+- Zip member: `uploads/2020/02/LEAP-profiles-BW-11.jpg`
+- Identification: the filename carries no name. On the old site (leapstellenbosch.org.za, fetched 2026-09-21) the team section places this image directly above the heading "Karl Bergemann". The same section pairs the named files of Munashe Chideya and Jan-Hendrik Pretorius with their headings in the same way, which confirms the pattern.
+- 300 px is the largest version that exists. No high-resolution original of the 2020 set was found on Dropbox.
+
+### kate-ekama
+
+**File:** `kate-ekama.jpg` (300 x 300 px, JPEG, black and white)
+- Zip member: `uploads/2020/02/LEAP-profiles-BW-21.jpg`
+- Identification: as above, the old site's team section places it directly above the heading "Kate Ekama". An older named portrait, `uploads/2019/03/Kate-Ekama.jpg` (also 300 px), was not used.
+
+### ada-jansen
+
+**File:** `ada-jansen.jpg` (400 x 550 px, JPEG, black and white)
+- Zip member: `uploads/2023/11/Ada-Jansen.jpg`. The filename names her, and the old site shows it beside "Ada Jansen" in the Governing Board section.

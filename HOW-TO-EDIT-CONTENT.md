@@ -29,7 +29,7 @@ If the build fails, the Actions tab shows a red cross and names the file and lin
 
 ## Worked example 1: a new working paper
 
-Open `_data/publications.yml` and add the entry at the top of the working papers, because the list runs from newest to oldest:
+Open `_data/publications.yml`. Journal articles come first in the file and working papers second, each list running from newest to oldest. Add the entry at the top of the working papers:
 
 ```yaml
 - title: "Wheat, Wine and Wealth: Cape Farm Productivity, 1700–1800"
@@ -81,7 +81,7 @@ Open `_data/datasets.yml` and add:
 3. In the repository open `assets` → `img` → `team`, click **Add file → Upload files**, drag the photo in and commit. A file with the same name replaces the old photo.
 4. In `_data/team.yml` make sure the person's entry says `photo: true`. With `photo: false` the card shows the person's initials.
 
-Photos appear in black and white and turn to colour when a visitor points at them. Board photos work the same way, in `assets/img/board/`.
+Photos always appear in black and white, whatever you upload, and a plain white background matches the rest of the team. Board photos work the same way, in `assets/img/board/`.
 
 ## Adding or removing a team member
 

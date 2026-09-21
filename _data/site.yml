@@ -47,3 +47,12 @@ social:
     handle: "@LEAP_SU"
     url: https://x.com/LEAP_SU
 github: https://github.com/leapstellenbosch
+
+# Parent institutions, linked in the footer, the home page and the contact page
+links:
+  department:
+    name: Department of Economics
+    url: https://www.ekon.sun.ac.za
+  university:
+    name: Stellenbosch University
+    url: https://www.su.ac.za
