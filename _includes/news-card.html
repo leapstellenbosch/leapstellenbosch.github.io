@@ -1,0 +1,14 @@
+{%- assign post = include.post -%}
+<a class="card card--news reveal" href="{{ post.url | relative_url }}">
+  {%- if post.image %}
+  <img class="card__img" src="{{ post.image | relative_url }}" alt="" loading="lazy">
+  {%- endif %}
+  <div class="card__body">
+    <p class="card__meta"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B %Y" }}</time></p>
+    <h3 class="card__title">{{ post.title }}</h3>
+    <p class="card__text">{{ post.summary | default: post.excerpt | strip_html | truncatewords: 32 }}</p>
+    {%- if post.author %}
+    <p class="card__foot">{{ post.author }}</p>
+    {%- endif %}
+  </div>
+</a>

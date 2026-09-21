@@ -1,0 +1,7 @@
+{%- comment -%} A treated image in WebP and JPEG at two widths. Params: dir, stem, small, large, alt, class, sizes {%- endcomment -%}
+{%- assign base = '/assets/img/' | append: include.dir | append: '/' | append: include.stem | relative_url -%}
+{%- assign sizes = include.sizes | default: '(max-width: 900px) 100vw, 50vw' -%}
+<picture>
+  <source type="image/webp" srcset="{{ base }}-{{ include.small }}.webp {{ include.small }}w, {{ base }}-{{ include.large }}.webp {{ include.large }}w" sizes="{{ sizes }}">
+  <img{% if include.class %} class="{{ include.class }}"{% endif %} src="{{ base }}-{{ include.small }}.jpg" srcset="{{ base }}-{{ include.small }}.jpg {{ include.small }}w, {{ base }}-{{ include.large }}.jpg {{ include.large }}w" sizes="{{ sizes }}" alt="{{ include.alt }}" loading="lazy">
+</picture>

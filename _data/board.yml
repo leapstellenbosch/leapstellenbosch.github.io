@@ -1,0 +1,44 @@
+# The LEAP Governing Board. Edit in the browser: see HOW-TO-EDIT-CONTENT.md
+# The photo is assets/img/board/<key>.jpg (square, 600px). No photo file? Set photo: false.
+
+- key: ada-jansen
+  name: Ada Jansen
+  role: Chair
+  institution: Department of Economics, Stellenbosch University
+  photo: false
+
+- key: sophia-du-plessis
+  name: Sophia du Plessis
+  role:
+  institution: Department of Economics, Stellenbosch University
+  photo: true
+
+- key: janine-myburgh
+  name: Janine Myburgh
+  role:
+  institution: Chairperson, Pniël Museum and Heritage Site
+  photo: true
+
+- key: kanshukan-rajaratnam
+  name: Kanshukan Rajaratnam
+  role:
+  institution: Dean, Faculty of Economic and Management Sciences, Stellenbosch University
+  photo: true
+
+- key: kris-inwood
+  name: Kris Inwood
+  role:
+  institution: Professor of Economics and History, University of Guelph
+  photo: true
+
+- key: mohamed-saleh
+  name: Mohamed Saleh
+  role:
+  institution: Associate Professor of Economic History, London School of Economics
+  photo: true
+
+- key: johan-fourie
+  name: Johan Fourie
+  role: Director
+  institution: LEAP, Stellenbosch University
+  photo: team    # reuses assets/img/team/johan-fourie.jpg

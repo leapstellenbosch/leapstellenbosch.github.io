@@ -1,0 +1,11 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+vendor/
+Gemfile.lock
+*.tmp.*
+*.zip
+LEAP-website-plan.md
+Thumbs.db
+.DS_Store

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  {%- unless page.image %}
+  <meta property="og:image" content="{{ '/assets/img/social-card.jpg' | absolute_url }}">
+  <meta name="twitter:image" content="{{ '/assets/img/social-card.jpg' | absolute_url }}">
+  {%- endunless %}
+  {% feed_meta %}
+  <meta name="theme-color" content="#120a0e">
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="alternate icon" href="{{ '/assets/favicon.png' | relative_url }}" type="image/png">
+  <link rel="preload" href="{{ '/assets/fonts/Raleway-Regular.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/Raleway-ExtraLight.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+  <script>document.documentElement.className += " js";</script>
+</head>
+<body class="page--{{ page.section | default: 'home' }}">
+  <a class="skip" href="#main">Skip to content</a>
+  {% include nav.html %}
+  <main id="main">
+{{ content }}
+  </main>
+  {% include footer.html %}
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>

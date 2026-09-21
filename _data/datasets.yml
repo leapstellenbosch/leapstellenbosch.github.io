@@ -1,0 +1,73 @@
+# Data releases. Edit in the browser: see HOW-TO-EDIT-CONTENT.md
+# status  Released or Forthcoming
+# TODO Johan: check periods and descriptions; move the repositories into github.com/leapstellenbosch.
+
+- name: The Cape of Good Hope Panel
+  period: "1700s–1800s"
+  status: Forthcoming
+  description: >-
+    The full series of Cape Colony tax censuses (opgaafrolle), transcribed and
+    linked across years into a household panel. Release planned for late 2026.
+  size:
+  licence: CC BY 4.0
+  url: https://www.capepanel.org
+  citation:
+
+- name: Selection into the Great Trek
+  period: "1825–1840"
+  status: Released
+  description: >-
+    Voortrekker genealogical records linked to the 1825 Cape Colony census and
+    to the British slave compensation records of 1833–34.
+  size: "10,420 census households; 2,702 Voortrekker records; 36,419 compensation records"
+  licence: CC BY 4.0
+  url: https://github.com/johanfourieza/research/tree/main/2026/voortrekker
+  citation: "Fourie, J. and Links, C. (2026). Demographic Pressure, Emancipation and Selection into the Great Trek. European Review of Economic History (forthcoming)."
+
+- name: The 1713 smallpox epidemic at the Cape
+  period: "1700–1720"
+  status: Released
+  description: >-
+    Settler and slave counts by district, year, age and sex from the tax
+    censuses, Orphan Chamber probate inventories by year, and labelled entries
+    from the Company's daily journal. Aggregate data with no personal records.
+  size: "7,670 labelled journal entries"
+  licence: CC BY 4.0
+  url: https://github.com/johanfourieza/research/tree/main/2026/1713smallpox
+  citation: "Fourie, J. (2026). A Disease Never Seen Here: Measuring the Severity of the 1713 Smallpox Epidemic at the Cape."
+
+- name: South African Constabulary personnel records
+  period: "After 1902"
+  status: Released
+  description: >-
+    Initial assignment, supervisor ratings and separation outcomes for recruits
+    to the South African Constabulary, the mounted police force of the decade
+    after the Anglo-Boer War.
+  size:
+  licence: CC BY 4.0
+  url: https://github.com/johanfourieza/research/tree/main/2026/sac
+  citation: "Fourie, J., Inwood, K. and Mariotti, M. (2026). Discrimination After Hiring: Within-Firm Sorting, Slow Employer Learning, and the Cost to the Sorted Worker."
+
+- name: Uprooted
+  period: "1500 to the present"
+  status: Released
+  description: >-
+    Replication code and a documented list of sources for a study of shared
+    ancestry and modern social connectedness, which combines the Putterman–Weil
+    World Migration Matrix with Meta's Social Connectedness Index. Third-party
+    data are linked, not redistributed.
+  size:
+  licence: CC BY 4.0
+  url: https://github.com/johanfourieza/research/tree/main/2026/uprooted
+  citation: "Fourie, J. (2026). Uprooted: Migration, Coercion, and the Roots of Social Connectedness."
+
+- name: Path dependence in economic history publications
+  period: "1997–2025"
+  status: Released
+  description: >-
+    Every article in the four core economic history journals, with annual
+    citation snapshots, conference programmes and prize records.
+  size: "3,250 articles; 72,695 citation links"
+  licence: CC BY 4.0 (data), MIT (code)
+  url: https://github.com/johanfourieza/research/tree/main/2026/path
+  citation: "Fourie, J. (2026). Testing for path dependence in economic history publications."

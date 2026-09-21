@@ -1,0 +1,47 @@
+---
+layout: default
+---
+{%- assign member = site.data.team | where: "name", page.author | first -%}
+<article>
+  <header class="post-head motif motif--ink">
+    <div class="wrap reveal">
+      <p class="label label--accent"><a href="{{ '/news/' | relative_url }}">News</a></p>
+      <h1 class="display">{{ page.title }}</h1>
+      <p class="post-head__meta">
+        <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%-d %B %Y" }}</time>
+        {%- if page.author %} · {% if member %}<a href="{{ '/team/' | relative_url }}#{{ member.key }}">{{ page.author }}</a>{% else %}{{ page.author }}{% endif %}{% endif %}
+      </p>
+    </div>
+  </header>
+  <div class="post-body">
+    <div class="wrap">
+      {%- if page.image %}
+      <img class="post-hero reveal" src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: '' }}">
+      {%- endif %}
+      <div class="prose reveal">
+{{ content }}
+      </div>
+    </div>
+  </div>
+</article>
+
+<section class="band band--maroon band--tight" aria-labelledby="more-news">
+  <div class="wrap">
+    <div class="section-head section-head--row reveal">
+      <div>
+        <p class="label">Keep reading</p>
+        <h2 class="h2" id="more-news">More news</h2>
+      </div>
+      <a class="more" href="{{ '/news/' | relative_url }}">All news</a>
+    </div>
+    <div class="grid grid--3">
+      {%- assign shown = 0 -%}
+      {%- for post in site.posts -%}
+        {%- if post.url != page.url and shown < 3 -%}
+          {%- include news-card.html post=post -%}
+          {%- assign shown = shown | plus: 1 -%}
+        {%- endif -%}
+      {%- endfor %}
+    </div>
+  </div>
+</section>

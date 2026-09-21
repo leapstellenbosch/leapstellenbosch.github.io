@@ -1,0 +1,21 @@
+{%- assign d = include.dataset -%}
+<li class="card dataset reveal">
+  <div class="card__body">
+    <div class="dataset__top">
+      <span class="dataset__period">{{ d.period }}</span>
+      <span class="status status--{{ d.status | downcase }}">{{ d.status }}</span>
+    </div>
+    <h3 class="card__title">{{ d.name }}</h3>
+    <p class="card__text">{{ d.description }}</p>
+    <p class="dataset__facts">
+      {%- if d.size %}<span><b>Size</b> {{ d.size }}</span>{% endif -%}
+      {%- if d.licence %}<span><b>Licence</b> {{ d.licence }}</span>{% endif -%}
+    </p>
+    {%- if d.citation %}
+    <p class="dataset__cite"><b>Cite as</b> {{ d.citation }}</p>
+    {%- endif %}
+    {%- if d.url %}
+    <p class="card__foot"><a href="{{ d.url }}" rel="noopener">{% if d.status == 'Released' %}Open the repository{% else %}Project website{% endif %}</a></p>
+    {%- endif %}
+  </div>
+</li>

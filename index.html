@@ -1,0 +1,128 @@
+---
+layout: default
+section: home
+description: "LEAP, the Laboratory for the Economics of Africa's Past at Stellenbosch University, is dedicated to the quantitative study of African economic and social history."
+---
+{%- assign s = site.data.site -%}
+{%- assign released = site.data.datasets | where: "status", "Released" -%}
+{%- assign working_papers = site.data.publications | where: "type", "working_paper" -%}
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__inner reveal">
+    <div class="hero__word" aria-hidden="true"><span class="l">L</span><span class="e">E</span><span class="a">A</span><span class="p">P</span></div>
+    <ul class="hero__sources" aria-label="The four archival sources behind the letters">
+      <li><b>L</b>Map of the Orange Free State and Transvaal</li>
+      <li><b>E</b>Share and Claim Exchange, Barberton, 1880s</li>
+      <li><b>A</b>Estate inventory, Cape Colony</li>
+      <li><b>P</b>Constabulary attestation paper, 1901</li>
+    </ul>
+    <p class="label hero__label">{{ s.name }} · Stellenbosch University</p>
+    <h1 class="hero__title" id="hero-title">{{ s.headline }}</h1>
+    <p class="hero__sub">We build large historical datasets from African archives and use them to explain the continent's long-run economic development.</p>
+    <div class="hero__cta">
+      <a class="btn btn--gold" href="{{ '/research/' | relative_url }}">Our research</a>
+      <a class="btn btn--ghost" href="{{ '/news/' | relative_url }}">Latest news</a>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="mission-title">
+  <div class="wrap mission">
+    <div class="reveal">
+      <h2 class="label" id="mission-title">About LEAP</h2>
+      <p class="mission__text" style="margin-top:1.4rem">{{ s.mission }}</p>
+      <p class="mission__founding">{{ s.founding }}</p>
+      <p class="mission__values">{{ s.values }}</p>
+    </div>
+    <ul class="facts reveal">
+      <li><span class="facts__n">{{ s.founded }}</span><span class="facts__t">Founded in the Department of Economics</span></li>
+      <li><span class="facts__n">{{ site.data.alumni | size }}</span><span class="facts__t">PhDs graduated since 2016</span></li>
+      <li><span class="facts__n">{{ released | size }}</span><span class="facts__t">Open data releases, with more to come</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band band--maroon motif motif--ink" aria-labelledby="news-title">
+  <div class="wrap">
+    <div class="section-head section-head--row reveal">
+      <div>
+        <p class="label">News</p>
+        <h2 class="h2" id="news-title">From the lab</h2>
+      </div>
+      <a class="more" href="{{ '/news/' | relative_url }}">All news</a>
+    </div>
+    <div class="grid grid--3">
+      {%- for post in site.posts limit: 3 -%}
+        {%- include news-card.html post=post -%}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="research-title">
+  <div class="wrap">
+    <div class="section-head section-head--row reveal">
+      <div>
+        <p class="label">Research</p>
+        <h2 class="h2" id="research-title">Current projects</h2>
+      </div>
+      <a class="more" href="{{ '/research/' | relative_url }}">All research</a>
+    </div>
+    <div class="grid grid--4">
+      {%- for p in site.data.projects limit: 4 %}
+      <a class="card card--project reveal" href="{{ '/research/' | relative_url }}#{{ p.key }}">
+        {%- include picture.html dir="projects" stem=p.image small=700 large=1400 alt="" class="card__img" sizes="(max-width: 680px) 100vw, (max-width: 900px) 50vw, 25vw" -%}
+        <div class="card__body">
+          <p class="card__meta">{{ p.lead }}</p>
+          <h3 class="card__title">{{ p.name }}</h3>
+          <p class="card__text">{{ p.strap }}</p>
+        </div>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="band band--maroon band--tight" aria-labelledby="papers-title">
+  <div class="wrap">
+    <div class="section-head section-head--row reveal">
+      <div>
+        <p class="label">Working papers</p>
+        <h2 class="h2" id="papers-title">Latest papers</h2>
+      </div>
+      <a class="more" href="{{ '/research/' | relative_url }}#working-papers">All papers</a>
+    </div>
+    <ul class="papers papers--dark reveal">
+      {%- for paper in working_papers limit: 4 -%}
+        {%- include paper-row.html paper=paper -%}
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="band motif motif--contour" aria-labelledby="data-title">
+  <div class="wrap reveal">
+    <p class="label" style="color:#8fb381">Data</p>
+    <h2 class="h2" id="data-title">Open data, ready to use</h2>
+    <p class="lede">Every dataset LEAP releases lives in a public repository under a CC BY 4.0 licence, with a codebook, machine-readable variable definitions and an R loader.</p>
+    <div class="btn-row">
+      <a class="btn btn--gold" href="{{ '/data/' | relative_url }}">Browse the data repository</a>
+    </div>
+  </div>
+</section>
+
+<section class="quote" aria-label="Quotation">
+  <div class="wrap reveal">
+    <blockquote>
+      “{{ s.quote.text }}”
+      <cite class="label">{{ s.quote.by }}</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="band--paper su-band" aria-label="Stellenbosch University">
+  <div class="wrap su-band__inner reveal">
+    <img src="{{ '/assets/img/logos/su-leap-on-light.png' | relative_url }}" alt="Stellenbosch University · LEAP, Laboratory for the Economics of Africa's Past" width="1400" height="269" loading="lazy">
+    <p>{{ s.su_line }}</p>
+  </div>
+</section>

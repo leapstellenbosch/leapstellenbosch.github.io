@@ -1,0 +1,43 @@
+---
+layout: none
+permalink: /llms.txt
+---
+# LEAP: Laboratory for the Economics of Africa's Past
+
+> {{ site.data.site.mission | strip_newlines }}
+
+LEAP is a research centre in the Department of Economics, Faculty of Economic and Management Sciences, Stellenbosch University, South Africa. It was established in 2015 and has been a Type-1 research centre since 2023. Director: Prof. Johan Fourie. Contact: {{ site.data.site.email }}.
+
+## Pages
+
+- [Home]({{ '/' | absolute_url }}): mission, latest news, current projects and working papers
+- [News]({{ '/news/' | absolute_url }}): appointments, conferences, lectures and new research
+- [Research]({{ '/research/' | absolute_url }}): current projects, LEAP working papers and published articles
+- [Team]({{ '/team/' | absolute_url }}): researchers, the Governing Board and PhD graduates since 2016
+- [Data]({{ '/data/' | absolute_url }}): open historical datasets, CC BY 4.0, with codebooks and R loaders
+- [Contact]({{ '/contact/' | absolute_url }}): Schumann Building, Bosman Street, Stellenbosch 7600, South Africa
+
+## Current projects
+{% for p in site.data.projects %}
+- {{ p.name }}: {{ p.strap }}. Lead: {{ p.lead }}.{% if p.url %} {{ p.url }}{% endif %}
+{%- endfor %}
+
+## Team
+{% for m in site.data.team %}
+- {{ m.name }}, {{ m.title }}: {{ m.focus }}
+{%- endfor %}
+
+## Datasets
+{% for d in site.data.datasets %}
+- {{ d.name }} ({{ d.period }}; {{ d.status }}): {{ d.url }}
+{%- endfor %}
+
+## Recent news
+{% for post in site.posts limit: 10 %}
+- [{{ post.title }}]({{ post.url | absolute_url }}), {{ post.date | date: "%-d %B %Y" }}: {{ post.summary }}
+{%- endfor %}
+
+## Feeds
+
+- News feed (Atom): {{ '/feed.xml' | absolute_url }}
+- Sitemap: {{ '/sitemap.xml' | absolute_url }}

@@ -1,0 +1,151 @@
+# LEAP publications. Edit in the browser: see HOW-TO-EDIT-CONTENT.md
+# Order: newest first. Two kinds of entry, set by `type:`.
+#
+# 1. Working paper (type: working_paper) carries series, number and a PDF url:
+#
+#    - title: "Full title of the paper"
+#      authors: [First Surname, First Surname]
+#      year: 2026
+#      type: working_paper
+#      series: Stellenbosch Economic Working Papers
+#      number: WP06/2026
+#      url: https://www.ekon.sun.ac.za/wpapers/2026/wp062026/wp062026.pdf
+#
+# 2. Journal article (type: article) carries journal and doi instead;
+#    its url is always https://doi.org/ followed by the doi:
+#
+#    - title: "Full title of the article"
+#      authors: [First Surname, First Surname]
+#      year: 2026
+#      type: article
+#      journal: Name of the Journal
+#      doi: 10.1111/aehr.70034
+#      url: https://doi.org/10.1111/aehr.70034
+#
+# Rules: two spaces of indentation, never tabs. Always wrap the title in
+# double quotes. Separate authors with commas and write each name as
+# First Surname; a name must not contain a comma (write Frank W. Garmon Jr.).
+
+# ---- Working papers ----
+
+- title: "Messy Research, Certification and the Monetization of Science"
+  authors: [Johan Fourie]
+  year: 2026
+  type: working_paper
+  series: Stellenbosch Economic Working Papers
+  number: WP07/2026
+  url: https://www.ekon.sun.ac.za/wpapers/2026/wp072026/wp072026.pdf
+
+- title: "Demographic Pressure, Emancipation and Selection into the Great Trek"
+  authors: [Johan Fourie, Calumet Links]
+  year: 2026
+  type: working_paper
+  series: Stellenbosch Economic Working Papers
+  number: WP06/2026
+  url: https://www.ekon.sun.ac.za/wpapers/2026/wp062026/wp062026.pdf
+
+- title: "Invisible Handedness: The Myth of Left-Right Batting Partnerships"
+  authors: [Johan Fourie, Krige Siebrits]
+  year: 2026
+  type: working_paper
+  series: Stellenbosch Economic Working Papers
+  number: WP05/2026
+  url: https://www.ekon.sun.ac.za/wpapers/2026/wp052026/wp052026.1.pdf
+
+- title: "Inequality in the Cape Colony, 1685–1844: New Measures, New Evidence"
+  authors: [Johan Fourie]
+  year: 2026
+  type: working_paper
+  series: Stellenbosch Economic Working Papers
+  number: WP04/2026
+  url: https://www.ekon.sun.ac.za/wpapers/2026/wp042026/wp042026.pdf
+
+- title: "Running Towards: Labour Market Incentives for Runaway Slaves in the British Cape Colony, 1830–1838"
+  authors: [Karl Bergemann, Gabriel Brown, Johan Fourie]
+  year: 2026
+  type: working_paper
+  series: Stellenbosch Economic Working Papers
+  number: WP03/2026
+  url: https://www.ekon.sun.ac.za/wpapers/2026/wp032026/wp032026.pdf
+
+- title: "Between Public Duty and Private Profit: Government Officials and Real Estate Investments in the Cape Colony, 1897–1902"
+  authors: [Munashe Chideya, Johan Fourie]
+  year: 2026
+  type: working_paper
+  series: Stellenbosch Economic Working Papers
+  number: WP02/2026
+  url: https://www.ekon.sun.ac.za/wpapers/2026/wp022026/wp022026.pdf
+
+- title: "Selective sanitation and racial health inequality"
+  authors: [Johan Fourie, Kelsey Lemon, Jan-Hendrik Pretorius]
+  year: 2026
+  type: working_paper
+  series: Stellenbosch Economic Working Papers
+  number: WP01/2026
+  url: https://www.ekon.sun.ac.za/wpapers/2026/wp012026/wp012026.pdf
+
+- title: "The price of status: Findings from Cape auctions"
+  authors: [Johan Fourie, Tessa Hubble, Jonathan Schoots]
+  year: 2025
+  type: working_paper
+  series: Stellenbosch Economic Working Papers
+  number: WP03/2025
+  url: https://www.ekon.sun.ac.za/wpapers/2025/wp032025/wp032025.pdf
+
+- title: "Auction records, consumer culture and social networks in the Cape Colony, 1701–1825"
+  authors: [Johan Fourie, Helena Liebenberg, Jonathan Schoots, Paul van der Linde]
+  year: 2025
+  type: working_paper
+  series: Stellenbosch Economic Working Papers
+  number: WP02/2025
+  url: https://www.ekon.sun.ac.za/wpapers/2025/wp022025/wp022025.pdf
+
+- title: "Early-Modern Globalization and the Extent of Indigenous Agency: Trade, Commodities, and Ecology"
+  authors: [Ann M Carlos, Erik Green, Calumet Links, Angela Redish]
+  year: 2024
+  type: working_paper
+  series: Stellenbosch Economic Working Papers
+  number: WP01/2024
+  url: https://www.ekon.sun.ac.za/wpapers/2024/wp012024/wp012024.pdf
+
+- title: "Estimating historical inequality from social tables: Towards Methodological Consistency"
+  authors: [Dieter von Fintel, Calumet Links, Erik Green]
+  year: 2023
+  type: working_paper
+  series: Stellenbosch Economic Working Papers
+  number: WP01/2023
+  url: https://www.ekon.sun.ac.za/wpapers/2023/wp012023/wp012023.pdf
+
+- title: "Living standards in settler South Africa, 1865–1920"
+  authors: [Johan Fourie, Kris Inwood, Martine Mariotti]
+  year: 2022
+  type: working_paper
+  series: Stellenbosch Economic Working Papers
+  number: WP06/2022
+  url: https://www.ekon.sun.ac.za/wpapers/2022/wp062022/wp062022.pdf
+
+- title: "The settlers’ fortunes: Comparing tax censuses in the Cape Colony and early American Republic"
+  authors: [Johan Fourie, Frank W. Garmon Jr.]
+  year: 2022
+  type: working_paper
+  series: Stellenbosch Economic Working Papers
+  number: WP05/2022
+  url: https://www.ekon.sun.ac.za/wpapers/2022/wp052022/wp052022.pdf
+
+- title: "School drop out and farm input subsidies: gender and kinship heterogeneity in Malawi"
+  authors: [Martin Mwale, Dieter von Fintel, Anja Smith]
+  year: 2022
+  type: working_paper
+  series: Stellenbosch Economic Working Papers
+  number: WP01/2022
+  url: https://www.ekon.sun.ac.za/wpapers/2022/wp012022/wp012022.pdf
+
+# ---- Journal articles ----
+
+- title: "Running towards: Labour market incentives for runaway slaves in the British Cape Colony, 1830–1838"
+  authors: [Karl Bergemann, Gabriel Brown, Johan Fourie]
+  year: 2026
+  type: article
+  journal: Asia-Pacific Economic History Review
+  doi: 10.1111/aehr.70034
+  url: https://doi.org/10.1111/aehr.70034

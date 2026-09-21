@@ -1,0 +1,19 @@
+{%- assign p = include.paper -%}
+<li class="paper">
+  <span class="paper__no">{% if p.type == 'working_paper' %}{{ p.number }}{% else %}{{ p.year }}{% endif %}</span>
+  <div>
+    <a class="paper__title" href="{{ p.url }}" rel="noopener">{{ p.title }}</a>
+    <p class="paper__authors">
+      {%- for a in p.authors -%}
+        {%- assign m = site.data.team | where: "name", a | first -%}
+        {%- if m %}<a href="{{ '/team/' | relative_url }}#{{ m.key }}">{{ a }}</a>{% else %}{{ a }}{% endif -%}
+        {%- if forloop.last %}{% elsif forloop.rindex == 2 %} and {% else %}, {% endif -%}
+      {%- endfor -%}
+      {%- if p.type == 'working_paper' %} · LEAP working paper · {{ p.series }}{% endif -%}
+    </p>
+    {%- if p.journal %}
+    <p class="paper__venue">{{ p.journal }}</p>
+    {%- endif %}
+  </div>
+  <a class="paper__get" href="{{ p.url }}" rel="noopener" aria-label="{% if p.type == 'working_paper' %}PDF{% else %}Article{% endif %}: {{ p.title | escape }}">{% if p.type == 'working_paper' %}PDF{% else %}Read{% endif %}</a>
+</li>

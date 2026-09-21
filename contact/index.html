@@ -1,0 +1,45 @@
+---
+layout: default
+title: Contact
+section: contact
+description: "How to reach LEAP: Schumann Building, Bosman Street, Stellenbosch, or leap@sun.ac.za."
+---
+{%- assign s = site.data.site -%}
+{%- include page-head.html motif="contour" label="Contact" title="Find us in Stellenbosch" -%}
+{%- assign d = 0.0045 -%}
+{%- assign west = s.map.lon | minus: d -%}{%- assign east = s.map.lon | plus: d -%}
+{%- assign south = s.map.lat | minus: 0.0028 -%}{%- assign north = s.map.lat | plus: 0.0028 -%}
+
+<section class="band" aria-label="Contact details">
+  <div class="wrap contact">
+    <div class="reveal">
+      <div class="contact__block">
+        <h2 class="label label--accent">Email</h2>
+        <a class="contact__email" href="mailto:{{ s.email }}">{{ s.email }}</a>
+      </div>
+      <div class="contact__block">
+        <h2 class="label label--accent">Visit</h2>
+        <address>{% for line in s.address.physical %}{{ line }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}</address>
+      </div>
+      <div class="contact__block">
+        <h2 class="label label--accent">Post</h2>
+        <address>{% for line in s.address.postal %}{{ line }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}</address>
+      </div>
+      <div class="contact__block">
+        <h2 class="label label--accent">Director</h2>
+        <p><a class="link" href="{{ '/team/' | relative_url }}#johan-fourie">{{ s.director }}</a></p>
+      </div>
+      <div class="contact__block">
+        <h2 class="label label--accent">Follow</h2>
+        <p>{% for acc in s.social %}<a class="link" href="{{ acc.url }}" rel="me noopener">{{ acc.handle }} on {{ acc.name }}</a>{% unless forloop.last %}<br>{% endunless %}{% endfor %}</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="map">
+        <iframe title="Map: the Schumann Building, Bosman Street, Stellenbosch" loading="lazy" referrerpolicy="no-referrer"
+          src="https://www.openstreetmap.org/export/embed.html?bbox={{ west }}%2C{{ south }}%2C{{ east }}%2C{{ north }}&amp;layer=mapnik&amp;marker={{ s.map.lat }}%2C{{ s.map.lon }}"></iframe>
+      </div>
+      <a class="more map__link" href="{{ s.map.google }}" rel="noopener">Open in Google Maps</a>
+    </div>
+  </div>
+</section>

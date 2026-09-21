@@ -1,0 +1,74 @@
+# The LEAP team, in display order. Edit in the browser: see HOW-TO-EDIT-CONTENT.md
+# key    lower-case-with-hyphens. The photo is assets/img/team/<key>.jpg (square, 600px).
+#        No photo file? Set photo: false and the card shows the member's initials.
+# focus  one line, no full stop.
+
+- key: johan-fourie
+  name: Johan Fourie
+  title: Director and Professor of Economics
+  focus: The economic history of southern Africa, from Cape settler society to the twentieth century
+  site: https://www.johanfourie.com
+  photo: true
+
+- key: dieter-von-fintel
+  name: Dieter von Fintel
+  title: Professor
+  focus: Labour, poverty and inequality; spatial and historical microeconometrics
+  site: https://www.ekon.sun.ac.za/dvf
+  photo: true
+
+- key: calumet-links
+  name: Calumet Links
+  title: Senior Lecturer
+  focus: Khoe economic history and the Cape frontier
+  site: https://www.ekon.sun.ac.za/staff/links-calumet
+  photo: true
+
+- key: edward-kerby
+  name: Edward Kerby
+  title: Researcher
+  focus: Text-as-data and African financial history
+  site: https://www.edwardkerby.com
+  photo: true
+
+- key: kate-ekama
+  name: Kate Ekama
+  title: Researcher
+  focus: Slavery and emancipation in the Indian Ocean world
+  site: https://www.kateekama.com
+  photo: true
+
+- key: munashe-chideya
+  name: Munashe Chideya
+  title: Postdoctoral Fellow
+  focus: Joint-stock companies and government in the Cape Colony
+  site: https://sites.google.com/view/munashechideya
+  photo: true
+
+- key: karl-bergemann
+  name: Karl Bergemann
+  title: Postdoctoral Fellow
+  focus: Runaway labour in the emancipation-era Cape
+  site:
+  photo: true
+
+- key: noah-macdonald
+  name: Noah MacDonald
+  title: Postdoctoral Fellow
+  focus: Historical labour markets and between-group disparities
+  site: https://noahmacdonald.org
+  photo: true
+
+- key: etienne-le-rossignol
+  name: Etienne Le Rossignol
+  title: Postdoctoral Fellow
+  focus: Culture, persistence and development
+  site: https://etiennelerossignol.wordpress.com
+  photo: true
+
+- key: jan-hendrik-pretorius
+  name: Jan-Hendrik Pretorius
+  title: PhD student
+  focus: Long-run wealth mobility and historical demography
+  site: https://scholar.google.com/citations?user=ZC2LnAUAAAAJ
+  photo: true

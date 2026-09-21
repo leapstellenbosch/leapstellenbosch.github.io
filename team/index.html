@@ -1,0 +1,68 @@
+---
+layout: default
+title: Team
+section: team
+description: "The LEAP team, its Governing Board and the PhDs the lab has graduated since 2016."
+---
+{%- include page-head.html motif="weave" label="Team" title="The people of LEAP" lede="The LEAP team works in the Department of Economics at Stellenbosch University." -%}
+
+<section class="band" aria-labelledby="team-title">
+  <div class="wrap">
+    <h2 class="label label--accent reveal" id="team-title" style="margin-bottom:2.2rem">Researchers</h2>
+    <ul class="grid grid--5">
+      {%- for person in site.data.team -%}
+        {%- include person-card.html person=person -%}
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="band band--paper" aria-labelledby="board-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="label">Governance</p>
+      <h2 class="h2" id="board-title">Governing Board</h2>
+    </div>
+    <ul class="board reveal">
+      {%- for m in site.data.board %}
+      {%- assign parts = m.name | split: " " %}
+      <li class="board__person">
+        {%- if m.photo == "team" %}
+        <img class="board__photo" src="{{ '/assets/img/team/' | append: m.key | append: '.jpg' | relative_url }}" alt="" width="76" height="76" loading="lazy">
+        {%- elsif m.photo %}
+        <img class="board__photo" src="{{ '/assets/img/board/' | append: m.key | append: '.jpg' | relative_url }}" alt="" width="76" height="76" loading="lazy">
+        {%- else %}
+        <span class="board__initials" aria-hidden="true">{{ parts.first | slice: 0 }}{{ parts.last | slice: 0 }}</span>
+        {%- endif %}
+        <div>
+          <p class="board__name">{{ m.name }}</p>
+          {%- if m.role %}
+          <p class="board__role">{{ m.role }}</p>
+          {%- endif %}
+          <p class="board__inst">{{ m.institution }}</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="band band--maroon" aria-labelledby="alumni-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="label label--accent">Alumni</p>
+      <h2 class="h2" id="alumni-title">PhD graduates</h2>
+      <p class="lede">LEAP has graduated the following PhDs since 2016.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="alumni">
+        <thead><tr><th scope="col">Year</th><th scope="col">Name</th><th scope="col">Dissertation</th><th scope="col">Now</th></tr></thead>
+        <tbody>
+          {%- for a in site.data.alumni %}
+          <tr><td>{{ a.year }}</td><td>{{ a.name }}</td><td>{{ a.title }}</td><td>{{ a.position }}</td></tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

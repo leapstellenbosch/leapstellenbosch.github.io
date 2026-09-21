@@ -1,0 +1,25 @@
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="{{ '/' | relative_url }}" aria-label="LEAP, Stellenbosch University: home">
+      <img src="{{ '/assets/img/logos/su-leap-on-dark.png' | relative_url }}" alt="Stellenbosch University · LEAP, Laboratory for the Economics of Africa's Past" width="240" height="46">
+    </a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="{{ '/news/' | relative_url }}"{% if page.section == 'news' %} class="active" aria-current="page"{% endif %}>News</a>
+      <a href="{{ '/research/' | relative_url }}"{% if page.section == 'research' %} class="active" aria-current="page"{% endif %}>Research</a>
+      <a href="{{ '/team/' | relative_url }}"{% if page.section == 'team' %} class="active" aria-current="page"{% endif %}>Team</a>
+      <a href="{{ '/data/' | relative_url }}"{% if page.section == 'data' %} class="active" aria-current="page"{% endif %}>Data</a>
+      <a href="{{ '/contact/' | relative_url }}"{% if page.section == 'contact' %} class="active" aria-current="page"{% endif %}>Contact</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="menu" id="menu" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <a href="{{ '/' | relative_url }}">Home</a>
+    <a href="{{ '/news/' | relative_url }}">News</a>
+    <a href="{{ '/research/' | relative_url }}">Research</a>
+    <a href="{{ '/team/' | relative_url }}">Team</a>
+    <a href="{{ '/data/' | relative_url }}">Data</a>
+    <a href="{{ '/contact/' | relative_url }}">Contact</a>
+  </nav>
+</div>

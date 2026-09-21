@@ -1,0 +1,81 @@
+# Current research projects, in display order. Edit in the browser: see HOW-TO-EDIT-CONTENT.md
+# The first four appear on the home page.
+# image   file stem in assets/img/projects/ (made by tools/treat-images.py)
+# body    one or two paragraphs; leave a blank line between paragraphs.
+# TODO Johan: review all six blurbs.
+
+- key: project-1834
+  name: Project 1834
+  strap: Slavery, emancipation and the university
+  lead: Kate Ekama
+  period: From 2026
+  funder: Stellenbosch University
+  image: project-1834
+  image_alt: A framed composite portrait from the LEAP exhibition on runaway slaves at the Cape
+  url:
+  body: |
+    Slavery was abolished at the Cape on 1 December 1834. Project 1834 studies what slavery and emancipation meant for the people of Stellenbosch and for the university that grew up among them. It has three pillars: research on slavery and its aftermath, redress through histories of the university's farms, and public history.
+
+    The project launched in January 2026 with the international conference Global Slavery, Emancipations and the University at the Stellenbosch Institute for Advanced Study.
+
+- key: cape-panel
+  name: The Cape of Good Hope Panel
+  strap: Two centuries of households, linked
+  lead: Johan Fourie
+  period: 2021 to 2026
+  funder: Riksbankens Jubileumsfond
+  image: cape-panel
+  image_alt: A Cape Dutch farmhouse behind oak trees, photographed in the early twentieth century
+  url: https://www.capepanel.org
+  body: |
+    The Cape Colony's annual tax censuses, the opgaafrolle, recorded every settler household's people, crops, livestock and slaves. The Cape of Good Hope Panel transcribes the full series and links households from one census to the next, which makes it one of the longest household panels for any pre-industrial society.
+
+    The project is funded by Riksbankens Jubileumsfond, the Bank of Sweden Tercentenary Foundation. It concludes in 2026 with a public release of the data.
+
+- key: time-traveller
+  name: Time Traveller
+  strap: A thousand years of travellers' accounts as data
+  lead: Edward Kerby
+  period:
+  funder:
+  image: time-traveller
+  image_alt: A nineteenth-century lithographed survey plan of a gold concession
+  url: https://www.timetraveller.voyage
+  body: |
+    For a thousand years travellers to Africa wrote down what they saw: prices, crops, diseases, rulers, roads. Time Traveller treats these diaries and accounts as data. It uses text-as-data methods to measure how Africa's economies and societies changed, in places and periods for which no statistics exist.
+
+- key: frontiers-of-finance
+  name: Frontiers of Finance
+  strap: A lab for African business and financial history
+  lead: Edward Kerby
+  period:
+  funder:
+  image: frontiers-of-finance
+  image_alt: A bound volume of company registration papers in the Cape archives
+  url:
+  body: |
+    Frontiers of Finance studies how firms, banks and investors built Africa's financial markets, and where they failed. It works from company registers, share lists and prospectuses, among them the records of the joint-stock companies of the Cape Colony.
+
+- key: indigenous-economies
+  name: Indigenous economies of the Cape
+  strap: Khoe labour, wages and trade on the frontier
+  lead: Calumet Links
+  period:
+  funder:
+  image: indigenous-economies
+  image_alt: A figure standing among aloes above a river valley, photographed in the early twentieth century
+  url:
+  body: |
+    The Khoe were the Cape's first pastoralists and, after colonial settlement, a large share of its farm labour. Colonial records counted them poorly. This project grew out of the Cape of Good Hope Panel. It reconstructs Khoe labour, wages and trade on the Cape frontier and asks how indigenous households responded to the settler economy.
+
+- key: chair
+  name: Chair in Economics, History and Policy
+  strap: Economic history for public debate
+  lead: Johan Fourie
+  period:
+  funder:
+  image: chair
+  image_alt: The Transvaal Share and Claim Exchange in Barberton in the 1880s
+  url: https://www.ourlongwalk.com
+  body: |
+    The Chair takes economic history to readers outside the university. Its home is Our Long Walk, a blog and podcast on the economic history of South Africa and the continent. The Chair also makes written submissions on public policy, most recently on the school History curriculum and on national AI policy.

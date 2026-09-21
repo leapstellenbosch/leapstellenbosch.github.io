@@ -1,0 +1,19 @@
+{%- assign person = include.person -%}
+{%- assign parts = person.name | split: " " -%}
+<li class="card person card--hover reveal" id="{{ person.key }}">
+  {%- if person.photo %}
+  <img class="person__photo" src="{{ '/assets/img/team/' | append: person.key | append: '.jpg' | relative_url }}" alt="{{ person.name }}" width="600" height="600" loading="lazy">
+  {%- else %}
+  <div class="person__initials" aria-hidden="true">{{ parts.first | slice: 0 }}{{ parts.last | slice: 0 }}</div>
+  {%- endif %}
+  <div class="card__body">
+    <h3 class="person__name">{{ person.name }}</h3>
+    <p class="person__title">{{ person.title }}</p>
+    {%- if person.focus %}
+    <p class="person__focus">{{ person.focus }}</p>
+    {%- endif %}
+    {%- if person.site %}
+    <a class="person__link" href="{{ person.site }}" rel="noopener">Website</a>
+    {%- endif %}
+  </div>
+</li>

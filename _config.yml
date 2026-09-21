@@ -1,0 +1,62 @@
+# LEAP website: site-wide settings.
+# Day-to-day content does NOT live here. News is in _posts/, everything else in _data/.
+
+title: "LEAP"
+tagline: "Laboratory for the Economics of Africa's Past"
+description: >-
+  The Laboratory for the Economics of Africa's Past (LEAP) at Stellenbosch University
+  is dedicated to the quantitative study of African economic and social history.
+url: "https://leapstellenbosch.org"
+baseurl: ""
+lang: en-ZA
+timezone: Africa/Johannesburg
+
+# jekyll-seo-tag
+logo: /assets/img/social-card.jpg
+twitter:
+  username: LEAP_SU
+  card: summary_large_image
+social:
+  name: LEAP, Stellenbosch University
+  links:
+    - https://x.com/LEAP_SU
+    - https://github.com/leapstellenbosch
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: /feed.xml
+
+permalink: /news/:year/:title/
+
+defaults:
+  - scope: { path: "", type: posts }
+    values:
+      layout: post
+      section: news
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  smart_quotes: ["lsquo", "rsquo", "ldquo", "rdquo"]
+
+sass:
+  style: compressed
+
+exclude:
+  - README.md
+  - CLAUDE.md
+  - HOW-TO-ADD-NEWS.md
+  - HOW-TO-EDIT-CONTENT.md
+  - SETUP-github-and-domain.md
+  - LEAP-website-plan.md
+  - docs/
+  - tools/
+  - _sources/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - "*.zip"

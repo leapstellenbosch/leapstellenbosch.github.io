@@ -1,0 +1,21 @@
+{%- assign p = include.project -%}
+<article class="project reveal" id="{{ p.key }}">
+  <div class="project__media">
+    {%- include picture.html dir="projects" stem=p.image small=700 large=1400 alt=p.image_alt -%}
+  </div>
+  <div>
+    <h3 class="project__name">{{ p.name }}</h3>
+    {%- if p.strap %}
+    <p class="project__strap">{{ p.strap }}</p>
+    {%- endif %}
+    <p class="project__facts">
+      {%- if p.lead %}<span><b>Lead</b>{{ p.lead }}</span>{% endif -%}
+      {%- if p.period %}<span><b>Period</b>{{ p.period }}</span>{% endif -%}
+      {%- if p.funder %}<span><b>Funder</b>{{ p.funder }}</span>{% endif -%}
+    </p>
+    <div class="project__body">{{ p.body | markdownify }}</div>
+    {%- if p.url %}
+    <a class="more" href="{{ p.url }}" rel="noopener">{{ p.url | remove: 'https://' | remove: 'www.' }}</a>
+    {%- endif %}
+  </div>
+</article>

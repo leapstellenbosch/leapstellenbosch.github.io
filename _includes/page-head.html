@@ -1,0 +1,10 @@
+<header class="page-head motif motif--{{ include.motif }}">
+  <div class="wrap reveal">
+    <p class="label label--accent">{{ include.label }}</p>
+    <h1 class="display">{{ include.title }}</h1>
+    {%- if include.lede %}
+    <p class="lede">{{ include.lede }}</p>
+    {%- endif %}
+    <span class="page-head__rule" aria-hidden="true"></span>
+  </div>
+</header>

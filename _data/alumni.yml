@@ -1,0 +1,62 @@
+# PhD graduates. Edit in the browser: see HOW-TO-EDIT-CONTENT.md
+# Order: oldest first. Always wrap title and position in double quotes.
+- name: Jeanne Cilliers
+  year: 2016
+  title: "A demographic history of settler South Africa"
+  position: "Department of Economic History, Lund University"
+
+- name: Christie Swanepoel
+  year: 2017
+  title: "The private credit market of the Cape Colony, 1673–1834: wealth, property rights, and social networks"
+  position: "Department of Economics, University of the Western Cape"
+
+- name: Abel Gwaindepi
+  year: 2018
+  title: "State building in the colonial era: public revenue, expenditure and borrowing patterns in the Cape Colony, 1820–1910"
+  position: "University of Copenhagen, Centre for African Studies"
+
+# TODO Johan: dissertation title and current position
+- name: Heinrich Nel
+  year: 2020
+  title: ""
+  position: ""
+
+- name: Farai Nyika
+  year: 2021
+  title: "Early effects and legacies of Cape Colony legislation on black disenfranchisement, education and migration"
+  position: "School of Business, MANCOSA"
+
+- name: Calumet Links
+  year: 2021
+  title: "The economic impact of the Khoe on the north-eastern frontier of the Cape Colony"
+  position: "Department of Economics, Stellenbosch University"
+
+- name: Lloyd Maphosa
+  year: 2021
+  title: "A historical analysis of joint stock companies in the Cape Colony between 1892 and 1902"
+  position: "Queen’s Business School, Queen’s University Belfast"
+
+- name: Amy Rommelspacher
+  year: 2022
+  title: "Work, wedlock and widows: comparing the lives of coloured and white women in Cape Town, 1900–1960"
+  position: "DRC Archives, Stellenbosch"
+
+- name: Karl Bergemann
+  year: 2024
+  title: "The runaways: a study of enslaved, apprenticed and indentured labour flight at the Cape in the emancipation era, 1830–42"
+  position: "Department of History, Utrecht University"
+
+- name: Munashe Chideya
+  year: 2024
+  title: "Private joint-stock companies and government relations in the Cape Colony, 1892–1902"
+  position: "Department of Economics, Stellenbosch University"
+
+- name: Lisa-Cheree Martin
+  year: 2025
+  title: "Life after slavery: investigations into self-selection and social mobility"
+  position: "Department of Economics, Stellenbosch University"
+
+- name: Tim Ngalande
+  year: 2026
+  title: "Growth, Productivity, Labour Misallocation, and the Paradox of Apartheid in 20th Century South Africa"
+  position: "Fuqua School of Business, Duke University"

@@ -1,0 +1,24 @@
+---
+layout: default
+title: News
+section: news
+description: "News from LEAP: appointments, conferences, lectures, prizes and new research."
+---
+{%- include page-head.html motif="ink" label="News" title="From the lab" lede="Appointments, conferences, lectures and new research from the LEAP team." -%}
+
+<section class="band" aria-label="All news">
+  <div class="wrap">
+    {%- assign by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" -%}
+    {%- for year in by_year %}
+    <h2 class="year-head reveal"><span>{{ year.name }}</span></h2>
+    <div class="grid grid--3">
+      {%- for post in year.items -%}
+        {%- include news-card.html post=post -%}
+      {%- endfor %}
+    </div>
+    {%- endfor %}
+    {%- if site.posts.size == 0 %}
+    <p class="lede">No news yet.</p>
+    {%- endif %}
+  </div>
+</section>

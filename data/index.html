@@ -1,0 +1,53 @@
+---
+layout: default
+title: Data
+section: data
+description: "LEAP's data repository: open historical datasets on GitHub under a CC BY 4.0 licence, each with a codebook and an R loader."
+---
+{%- include page-head.html motif="contour" label="Data" title="The data repository" lede="Every dataset we release lives in a public repository on GitHub under a CC BY 4.0 licence, with a codebook, machine-readable variable definitions and an R loader." -%}
+
+<section class="band" aria-labelledby="datasets-title">
+  <div class="wrap">
+    <div class="section-head section-head--row reveal">
+      <div>
+        <p class="label label--accent">Releases</p>
+        <h2 class="h2" id="datasets-title">Datasets</h2>
+      </div>
+      <div class="btn-row" style="margin-top:0">
+        <a class="btn btn--gold" href="{{ site.data.site.github }}" rel="noopener">GitHub organisation</a>
+        <a class="btn btn--ghost" href="#cite">How to cite</a>
+      </div>
+    </div>
+    <ul class="grid grid--2">
+      {%- for dataset in site.data.datasets -%}
+        {%- include dataset-card.html dataset=dataset -%}
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="band band--maroon" id="cite" aria-labelledby="cite-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="label label--accent">Using the data</p>
+      <h2 class="h2" id="cite-title">How to cite</h2>
+      <p class="lede">The data are free to use and adapt. In return, cite the paper named on the dataset's card, and the repository too if the journal allows it. Each repository's README gives the full reference.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="deposit-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="label label--accent">For LEAP researchers</p>
+      <h2 class="h2" id="deposit-title">Depositing data</h2>
+      <p class="lede">Every LEAP release follows one package layout, so that a reader who has used one dataset can use them all.</p>
+    </div>
+    <ul class="steps reveal">
+      <li><h3>Plain files</h3><p>Data as UTF-8 <code>CSV</code> only. No spreadsheets, no proprietary formats. Missing values are empty strings.</p></li>
+      <li><h3>Documented</h3><p>A <code>README</code>, a <code>LICENSE</code> (CC BY 4.0), a <code>CODEBOOK</code> and a machine-readable <code>variables.csv</code>.</p></li>
+      <li><h3>Loadable</h3><p>A <code>load.R</code> script that reads every file with the right types, so replication starts with one line.</p></li>
+    </ul>
+    <p class="lede reveal">To deposit a dataset, write to <a class="link" href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a>.</p>
+  </div>
+</section>

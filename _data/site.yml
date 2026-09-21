@@ -1,0 +1,49 @@
+# Site copy and contact details. Edit in the browser: see HOW-TO-EDIT-CONTENT.md
+
+name: Laboratory for the Economics of Africa's Past
+short_name: LEAP
+email: leap@sun.ac.za
+director: Prof. Johan Fourie
+
+headline: "Africa's economic past, measured."
+mission: >-
+  The Laboratory for the Economics of Africa's Past (LEAP) is dedicated to the
+  quantitative study of African economic and social history. It brings together
+  scholars and students interested in understanding and explaining the long-term
+  economic development of Africa's diverse societies.
+founding: >-
+  Established in 2015 in the Department of Economics, Stellenbosch University.
+  A Type-1 research centre since 2023.
+values: "Creativity, courage, credibility, collaboration, compassion."
+founded: 2015
+
+quote:
+  text: >-
+    No man can know where he is going unless he knows exactly where he has been
+    and exactly how he arrived at his present place.
+  by: Maya Angelou, 1972
+
+su_line: >-
+  A research centre in the Department of Economics, Faculty of Economic and
+  Management Sciences, Stellenbosch University.
+
+address:
+  physical:
+    - LEAP, Department of Economics
+    - Schumann Building, Bosman Street
+    - Stellenbosch 7600
+    - South Africa
+  postal:
+    - Private Bag X1
+    - Matieland 7602
+    - South Africa
+map:
+  lat: -33.9325
+  lon: 18.8673
+  google: "https://www.google.com/maps/search/?api=1&query=Schumann+Building+Stellenbosch+University"
+
+social:
+  - name: X
+    handle: "@LEAP_SU"
+    url: https://x.com/LEAP_SU
+github: https://github.com/leapstellenbosch
