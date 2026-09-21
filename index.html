@@ -4,6 +4,7 @@ section: home
 description: "LEAP, the Laboratory for the Economics of Africa's Past at Stellenbosch University, is dedicated to the quantitative study of African economic and social history."
 ---
 {%- assign s = site.data.site -%}
+{%- assign letters = "l,e,a,p" | split: "," -%}
 {%- assign released = site.data.datasets | where: "status", "Released" -%}
 {%- assign working_papers = site.data.publications | where: "type", "working_paper" -%}
 {%- assign articles = site.data.publications | where: "type", "article" -%}
@@ -11,11 +12,23 @@ description: "LEAP, the Laboratory for the Economics of Africa's Past at Stellen
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero__inner reveal">
     <div class="hero__word" aria-hidden="true">
-      <span class="hero__letter"><span class="hero__glyph l">L</span><span class="hero__tip l">Map of the Orange Free State and Transvaal</span></span>
-      <span class="hero__letter"><span class="hero__glyph e">E</span><span class="hero__tip e">The Share and Claim Exchange, Barberton, 1880s</span></span>
-      <span class="hero__letter"><span class="hero__glyph a">A</span><span class="hero__tip a">An estate inventory from the Cape Colony</span></span>
-      <span class="hero__letter"><span class="hero__glyph p">P</span><span class="hero__tip p">A Constabulary attestation paper, 1901</span></span>
+      {%- for k in letters %}
+      <span class="hero__letter"><span class="hero__glyph {{ k }}">{{ k | upcase }}</span><span class="hero__tip {{ k }}">{{ site.data.hero[k].first.caption }}</span></span>
+      {%- endfor %}
     </div>
+    {%- comment -%} Draw one of the sources in _data/hero.yml for each letter, before the first paint. {%- endcomment %}
+    <script>
+      (function () {
+        var sources = {{ site.data.hero | jsonify }}, base = "{{ '/assets/img/hero/' | relative_url }}";
+        ["l", "e", "a", "p"].forEach(function (k) {
+          var list = sources[k]; if (!list || !list.length) return;
+          var pick = list[Math.floor(Math.random() * list.length)];
+          var glyph = document.querySelector(".hero__glyph." + k), tip = document.querySelector(".hero__tip." + k);
+          if (glyph) glyph.style.backgroundImage = "url(" + base + pick.image + ".webp)";
+          if (tip) tip.textContent = pick.caption;
+        });
+      })();
+    </script>
     <p class="label hero__label">{{ s.name }} · Stellenbosch University</p>
     <h1 class="hero__title" id="hero-title">{{ s.headline }}</h1>
     <p class="hero__sub">We build large historical datasets from African archives and use them to explain the continent's long-run economic development.</p>

@@ -16,7 +16,7 @@ The public website of LEAP (Laboratory for the Economics of Africa's Past), Stel
 - Maroon `#60223b` and gold `#a78e53` (Stellenbosch brand) carry at least 80% of the colour weight. The four letter accents (sage, earth, blue, plum) appear only as a page's header motif, its card rule and its eyebrow label.
 - The only logo shown is the official SU + LEAP co-branded logo (`assets/img/logos/`). Never display, redraw or imitate the unofficial four-letter LEAP icon. Never recreate or alter the Stellenbosch logo.
 - Headshots are black and white on a plain white background, and stay black and white on hover.
-- The home page cover (letters, headline, text, buttons) must fit one screen without scrolling; its sizes scale with the viewport height (`svh`). Each letter's archival source appears as a caption on hover or tap.
+- The home page cover (letters, headline, text, buttons) must fit one screen without scrolling; its sizes scale with the viewport height (`svh`). Each letter's archival source appears as a caption on hover or tap. The sources rotate: an inline script in `index.html` draws one of five per letter from `_data/hero.yml` on every page load (L maps and places, E photographs, A handwriting, P printed documents). Add sources through the `HERO` list in `tools/treat-images.py`; use only LEAP's own archival material.
 - Imagery is archival photographs, treated by `tools/treat-images.py`. No event or launch photographs in the design itself. News posts may carry their own photos.
 - Raleway for everything, ligatures off. Crimson Pro Italic only for quotations, dates and numerals.
 - Dark pages, with exactly one light "paper" band per page.

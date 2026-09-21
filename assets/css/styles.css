@@ -209,12 +209,13 @@ section{ position:relative; }
 .hero__glyph.e{ color:var(--e-sand); }
 .hero__glyph.a{ color:var(--a-blue); }
 .hero__glyph.p{ color:var(--p-rose); }
+/* Defaults only: a script in index.html draws one of five sources per letter (_data/hero.yml). */
 @supports ((-webkit-background-clip:text) or (background-clip:text)){
   .hero__glyph{ -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; }
-  .hero__glyph.l{ background-image:url("../img/archive/hero-l-900.jpg"); background-image:image-set(url("../img/archive/hero-l-900.webp") type("image/webp"), url("../img/archive/hero-l-900.jpg") type("image/jpeg")); }
-  .hero__glyph.e{ background-image:url("../img/archive/hero-e-900.jpg"); background-image:image-set(url("../img/archive/hero-e-900.webp") type("image/webp"), url("../img/archive/hero-e-900.jpg") type("image/jpeg")); }
-  .hero__glyph.a{ background-image:url("../img/archive/hero-a-900.jpg"); background-image:image-set(url("../img/archive/hero-a-900.webp") type("image/webp"), url("../img/archive/hero-a-900.jpg") type("image/jpeg")); }
-  .hero__glyph.p{ background-image:url("../img/archive/hero-p-900.jpg"); background-image:image-set(url("../img/archive/hero-p-900.webp") type("image/webp"), url("../img/archive/hero-p-900.jpg") type("image/jpeg")); }
+  .hero__glyph.l{ background-image:url("../img/hero/l-free-state-map.webp"); }
+  .hero__glyph.e{ background-image:url("../img/hero/e-barberton.webp"); }
+  .hero__glyph.a{ background-image:url("../img/hero/a-estate-inventory.webp"); }
+  .hero__glyph.p{ background-image:url("../img/hero/p-attestation-paper.webp"); }
 }
 /* The archival source of each letter, shown when the pointer is over it (or it is tapped). */
 .hero__tip{
@@ -223,6 +224,8 @@ section{ position:relative; }
   opacity:0; transform:translateY(-4px); transition:opacity .35s var(--ease), transform .35s var(--ease);
 }
 .hero__letter:hover .hero__tip, .hero__letter.show .hero__tip{ opacity:1; transform:none; }
+/* P is the last letter: its caption runs leftwards so a long line cannot leave the screen. */
+.hero__tip.p{ left:auto; right:.1em; text-align:right; }
 .hero__tip.l{ color:#8fb381; } .hero__tip.e{ color:var(--e-sand); } .hero__tip.a{ color:#6fb2d6; } .hero__tip.p{ color:var(--p-rose); }
 .hero__label{ margin-top:clamp(2.7rem, 6.5svh, 3.6rem); }
 .hero__title{
@@ -499,6 +502,10 @@ a.paper__title:hover, .paper__title a:hover{ color:var(--ink); text-decoration:u
   .board{ grid-template-columns:repeat(3,1fr); }
 }
 @media (max-width:900px){
+  /* Captions run the full width under the word, so a long one can wrap and never leaves the screen. */
+  .hero__letter{ position:static; }
+  .hero__tip, .hero__tip.p{ left:.2rem; right:0; white-space:normal; font-size:.92rem; text-align:left; }
+  .hero__label{ margin-top:clamp(3.3rem, 7svh, 3.8rem); }
   .nav__links{ display:none; }
   .nav__toggle{ display:block; }
   .nav__logo img{ height:40px; }
@@ -519,8 +526,6 @@ a.paper__title:hover, .paper__title a:hover{ color:var(--ink); text-decoration:u
   .paper{ grid-template-columns:1fr; gap:.35rem; }
   .paper__get{ margin-top:.3rem; }
   .footer__inner{ grid-template-columns:1fr; }
-  .hero__letter{ position:static; }
-  .hero__tip{ left:.2rem; right:0; white-space:normal; font-size:.92rem; }
   .hero__cta .btn{ padding:.85rem 1.4rem; }
   .alumni thead{ display:none; }
   .alumni, .alumni tbody, .alumni tr, .alumni td{ display:block; }

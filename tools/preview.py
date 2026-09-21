@@ -14,6 +14,7 @@ Requires Python 3 with PyYAML and markdown-it-py.
 """
 import datetime as dt
 import html
+import json
 import http.server
 import re
 import shutil
@@ -54,6 +55,7 @@ def split_outside_quotes(s, sep):
 
 
 def lookup(path, ctx):
+    path = re.sub(r"\[(\w+)\]", lambda m: "." + str(lookup(m.group(1), ctx)), path)   # a[b] -> a.<value of b>
     cur = ctx
     for key in path.split("."):
         if isinstance(cur, dict) and key in cur:
@@ -159,6 +161,7 @@ FILTERS = {
     "minus": lambda v, a, ctx: num(v) - num(a),
     "plus": lambda v, a, ctx: num(v) + num(a),
     "times": lambda v, a, ctx: num(v) * num(a),
+    "jsonify": lambda v, ctx: json.dumps(v, ensure_ascii=False),
     "join": lambda v, sep, ctx: sep.join(str(x) for x in v or []),
 }
 

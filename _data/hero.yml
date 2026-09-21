@@ -1,0 +1,66 @@
+# The archival sources behind the four letters on the home page.
+# Each visit draws one source at random for every letter; the caption appears
+# when a visitor points at (or taps) the letter. The first entry of each letter
+# is the one shown if a browser has JavaScript switched off.
+#
+# image    file name in assets/img/hero/, without .webp. The files are made by
+#          tools/treat-images.py (see the HERO list there), which tints each
+#          source in its letter's colour. To add a source, add it there, run
+#          `python tools/treat-images.py hero`, then add a line here.
+# caption  one short line, no full stop. Give the archive reference where there is one.
+#
+# L maps · E photographs · A handwriting · P printed records
+# A letter may have any number of sources. Origins are recorded in _sources/hero/SOURCES.md.
+# TODO Johan: check the captions.
+
+l:
+  - image: l-free-state-map
+    caption: Map of the Orange Free State and Transvaal
+  - image: l-africa-de-wit
+    caption: Frederick de Wit's map of Africa, c. 1660
+  - image: l-africa-1578
+    caption: The equatorial lakes of Africa after Pigafetta, Rome 1591 (Western Cape Archives, E4430)
+  - image: l-cape-town-1897
+    caption: Plan of Cape Town, 1897
+  - image: l-cadastral-albert
+    caption: Cadastral map of the division of Albert, c. 1890
+
+e:
+  - image: e-barberton
+    caption: The Share and Claim Exchange, Barberton, 1880s
+  - image: e-rogge-bay
+    caption: Rogge Bay fish market, Cape Town (Western Cape Archives, AG983)
+  - image: e-wine-farm
+    caption: Labourers among the vines near Breede River Station (Western Cape Archives, AG1044)
+  - image: e-east-london
+    caption: Ox-wagons on Market Square, East London (Western Cape Archives, AG1101)
+  - image: e-sifting-diamonds
+    caption: Sifting diamonds, Kimberley (Western Cape Archives, E8615)
+  - image: e-wool-wolseley
+    caption: Transporting wool at Wolseley (Western Cape Archives, E8110)
+
+a:
+  - image: a-estate-inventory
+    caption: An estate inventory from the Cape Colony
+  - image: a-estate-letter-1926
+    caption: A letter in a mineworker's estate file, 1926
+  - image: a-cape-police
+    caption: A recruit's answers on a Cape Police candidate's paper
+  - image: a-zar-certificate
+    caption: A registrar's certificate from the South African Republic, 1897
+  - image: a-register
+    caption: A handwritten register of names and occupations
+
+p:
+  - image: p-attestation-paper
+    caption: A South African Constabulary attestation paper, 1901
+  - image: p-slave-return-1834
+    caption: Return of slaves and their estimated value, Cape of Good Hope, 1834
+  - image: p-gazette-1830
+    caption: Cape of Good Hope Government Gazette, January 1830
+  - image: p-bantu-world
+    caption: The Bantu World, Johannesburg, 1930s
+  - image: p-voters-roll
+    caption: Voters' roll for the electoral division of Wodehouse
+  - image: p-wages-1909
+    caption: A table of wages and rent, 1909

@@ -24,7 +24,8 @@ _includes/                  nav, footer, page head, cards, paper rows, project s
 assets/css/styles.css       the design system; colours and type are tokens in :root
 assets/js/main.js           nav scroll state, mobile menu, scroll reveal
 assets/fonts/               Raleway (SU corporate typeface) and Crimson Pro Italic (OFL), subset to Latin
-assets/img/archive/         treated archival photographs: hero letters, motifs, quote band
+assets/img/hero/            the twenty treated sources behind the home page letters (five per letter)
+assets/img/archive/         treated archival photographs: motifs, quote band, social card letters
 assets/img/projects/        treated project photographs
 assets/img/team/ board/     headshots, 600px square
 assets/img/news/            photos for news items
@@ -41,7 +42,7 @@ CNAME                       the custom domain
 
 ## The design in one paragraph
 
-Predominantly dark. Stellenbosch's Confident Maroon (`#60223b`) and Brilliant Gold (`#a78e53`) carry the colour weight, and the only logo shown is the official SU + LEAP logo. The four letters of LEAP each have a texture and an accent colour, drawn from LEAP's own archival sources: **L** a contour map in sage (Data, Contact), **E** archival paper in earth and sand (Research), **A** manuscript ink in blue (News), **P** a geometric weave in plum (Team). On the home page each letter is a window onto a treated archival photograph. Each inner page carries its letter's motif in the header, and exactly one light "paper" band.
+Predominantly dark. Stellenbosch's Confident Maroon (`#60223b`) and Brilliant Gold (`#a78e53`) carry the colour weight, and the only logo shown is the official SU + LEAP logo. The four letters of LEAP each have a texture and an accent colour, drawn from LEAP's own archival sources: **L** a contour map in sage (Data, Contact), **E** archival paper in earth and sand (Research), **A** manuscript ink in blue (News), **P** a geometric weave in plum (Team). On the home page each letter is a window onto a treated archival source, drawn at random from five per letter on every visit (`_data/hero.yml`); pointing at a letter shows what it is. Each inner page carries its letter's motif in the header, and exactly one light "paper" band.
 
 ## Local preview
 

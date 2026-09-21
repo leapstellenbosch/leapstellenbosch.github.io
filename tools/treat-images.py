@@ -49,6 +49,53 @@ ARCHIVE = {
     "quote":    (r"Photos\Lab\high-res\LEAP lab 03.jpg",           "maroon", (0.00, 0.05, 1.00, 0.95), 0),
 }
 
+# ---- Home page letters: several sources per letter, one drawn at random on each visit.
+# stem -> (source, crop box as fractions l,t,r,b, rotation in degrees, clockwise negative).
+# The tone follows the letter. Captions live in _data/hero.yml; origins in _sources/hero/SOURCES.md.
+# L maps · E photographs · A handwriting · P printed records
+DATA = Path(r"C:\Users\johanf\Dropbox\3 Data")
+AP = DATA / "Archive photos"
+
+def ap(folder, ref):
+    """An archive photograph by its reference number: the file names are long descriptions."""
+    hits = sorted((AP / folder).glob(ref + "*.tif"))
+    if not hits:
+        raise FileNotFoundError(f"{folder}/{ref}*.tif")
+    return hits[0]
+
+HERO = {
+    "sage": {
+        "l-free-state-map":    (SRC / r"Photos\Website photos\IMG_4202.JPG",                          (0.05, 0.00, 0.75, 1.00), 0),
+        "l-africa-de-wit":     (DATA / r"Maps\JN12021 - KHC AF - 1660 DE WIT.tif",                    (0.22, 0.10, 0.78, 0.88), 0),
+        "l-africa-1578":       (ap("Elliot Collection", "E4430"),                                     (0.04, 0.04, 0.96, 0.66), 0),
+        "l-cape-town-1897":    (DATA / r"Maps\CapeTown1897.jpg",                                      (0.15, 0.08, 0.85, 0.80), 0),
+        "l-cadastral-albert":  (DATA / r"Robert Ross maps\Cape Colony Cadastral Maps c.1890 M3 Series\1588\Cadastral Maps For Professor Ross 063.jpg", (0.08, 0.10, 0.80, 0.95), 0),
+    },
+    "earth": {
+        "e-barberton":         (SRC / r"Photos\Website photos\Barberton.JPG",                         (0.10, 0.12, 0.95, 0.92), 0),
+        "e-rogge-bay":         (ap("2020", "AG983"),                                                  (0.03, 0.10, 0.97, 0.95), 0),
+        "e-wine-farm":         (ap("2020", "AG1044"),                                                 (0.00, 0.22, 1.00, 0.95), 0),
+        "e-east-london":       (ap("2020", "AG1101"),                                                 (0.00, 0.25, 1.00, 0.92), 0),
+        "e-sifting-diamonds":  (ap("Elliot Collection", "E8615"),                                     (0.25, 0.15, 1.00, 1.00), 0),
+        "e-wool-wolseley":     (ap("Elliot Collection", "E8110"),                                     (0.00, 0.15, 0.92, 0.93), 0),
+    },
+    "blue": {
+        "a-estate-inventory":  (SRC / r"Photos\Website photos\Archive.jpg",                           (0.04, 0.05, 0.86, 0.95), 0),
+        "a-estate-letter-1926":(DATA / r"Black inventories\KBN_3-1-1\32-2-36\IMG_0992.JPG",           (0.08, 0.14, 0.96, 0.80), 0),
+        "a-cape-police":       (DATA / r"Attestations\Cape Mounted Police\20140107_105717.jpg",       (0.05, 0.18, 0.95, 0.82), -90),
+        "a-zar-certificate":   (SRC / r"Photos\Limited Liability\IMG_3344.JPG",                       (0.05, 0.12, 0.98, 0.80), 0),
+        "a-register":          (SRC / r"Photos\Limited Liability\IMG_6647.JPG",                       (0.02, 0.05, 0.62, 0.95), 0),
+    },
+    "plum": {
+        "p-attestation-paper": (SRC / r"Photos\Projects\Living standards.JPG",                        (0.08, 0.14, 0.92, 0.95), 0),
+        "p-slave-return-1834": (DATA / r"Valuation rolls\T71.8 Valuation Roll Swellendam\IMG_0629.JPG", (0.04, 0.04, 0.96, 0.72), -90),
+        "p-gazette-1830":      (DATA / r"Gazettes\1830 Jan-Dec\IMG_6876.JPG",                         (0.03, 0.05, 0.97, 0.68), 0),
+        "p-bantu-world":       (DATA / r"Bantu World\nf-s-000015-n1\nf-s-000015-n1 (Page 11).png",    (0.02, 0.03, 0.50, 0.72), 0),
+        "p-voters-roll":       (DATA / r"Voters Rolls\1870-1909\27\10. Wodehouse\IMG_7306.JPG",       (0.22, 0.10, 0.51, 0.90), 0),
+        "p-wages-1909":        (DATA / r"Occupations and wages\Agri data wages 1909\wages198.jpg",    (0.05, 0.05, 0.95, 0.72), 0),
+    },
+}
+
 PROJECTS = {
     "project-1834":        (r"Photos\Exhibit\Runaway2.jpg",                       "maroon", (0.00, 0.22, 1.00, 0.78), 0),
     "cape-panel":          (r"Photos\Faces\Projects\Cape of Good Hope.tif",       "maroon", (0.00, 0.04, 1.00, 0.96), 0),
@@ -186,6 +233,14 @@ if __name__ == "__main__":
         for stem, (src, tone, box, rot) in ARCHIVE.items():
             export(duotone(load(SRC / src, box, rot), tone), stem, OUT / "archive")
             print("archive", stem)
+    if want("hero"):
+        (OUT / "hero").mkdir(parents=True, exist_ok=True)
+        for tone, items in HERO.items():
+            for stem, (src, box, rot) in items.items():
+                im = duotone(load(src, box, rot), tone)
+                im = im.resize((900, round(im.height * 900 / im.width)), Image.LANCZOS)
+                im.save(OUT / "hero" / f"{stem}.webp", quality=78, method=6)
+                print("hero", stem)
     if want("projects"):
         for stem, (src, tone, box, rot) in PROJECTS.items():
             export(duotone(load(SRC / src, box, rot), tone, vignette=0.25), stem, OUT / "projects", widths=(1400, 700))
