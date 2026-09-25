@@ -16,7 +16,7 @@ layout: default
   <div class="post-body">
     <div class="wrap">
       {%- if page.image %}
-      <img class="post-hero reveal" src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: '' }}">
+      <img class="{% if page.image_portrait %}post-portrait{% else %}post-hero{% endif %} reveal" src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: '' | escape }}">
       {%- endif %}
       <div class="prose reveal">
 {{ content }}

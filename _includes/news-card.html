@@ -1,7 +1,7 @@
 {%- assign post = include.post -%}
 <a class="card card--news reveal" href="{{ post.url | relative_url }}">
   {%- if post.image %}
-  <img class="card__img" src="{{ post.image | relative_url }}" alt="" loading="lazy">
+  <img class="card__img{% if post.image_portrait %} card__img--portrait{% endif %}" src="{{ post.image | relative_url }}" alt="" loading="lazy">
   {%- endif %}
   <div class="card__body">
     <p class="card__meta"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B %Y" }}</time></p>

@@ -2,36 +2,152 @@
 layout: default
 title: Data
 section: data
-description: "LEAP's data repository: open historical datasets on GitHub under a CC BY 4.0 licence, each with a codebook and an R loader."
+description: "LEAP's data index: every dataset behind a LEAP paper, public on GitHub under a CC BY 4.0 licence, with a codebook and an R loader."
 ---
-{%- include page-head.html motif="contour" label="Data" title="The data repository" lede="Every dataset we release lives in a public repository on GitHub under a CC BY 4.0 licence, with a codebook, machine-readable variable definitions and an R loader." -%}
+{%- include page-head.html motif="contour" label="Data" title="The data repository" lede="The data behind LEAP papers, free to download from GitHub under a CC BY 4.0 licence. Each package holds the data, a codebook and the code that reproduces the paper." -%}
+{%- assign datasets = site.data.datasets | sort: "released" | reverse -%}
 
 <section class="band" aria-labelledby="datasets-title">
   <div class="wrap">
     <div class="section-head section-head--row reveal">
       <div>
-        <p class="label label--accent">Releases</p>
+        <p class="label label--accent">Index</p>
         <h2 class="h2" id="datasets-title">Datasets</h2>
       </div>
       <div class="btn-row" style="margin-top:0">
-        <a class="btn btn--gold" href="{{ site.data.site.github }}" rel="noopener">GitHub organisation</a>
+        <a class="btn btn--gold" href="{{ site.data.site.github }}" rel="noopener">LEAP on GitHub</a>
         <a class="btn btn--ghost" href="#cite">How to cite</a>
       </div>
     </div>
-    <ul class="grid grid--2">
-      {%- for dataset in site.data.datasets -%}
-        {%- include dataset-card.html dataset=dataset -%}
-      {%- endfor %}
-    </ul>
+
+    <div class="dindex__tools reveal" hidden>
+      <label class="dindex__search"><span class="label">Search</span><input type="search" id="dindex-q" placeholder="Title, author, place or period" autocomplete="off"></label>
+      <p class="dindex__count" id="dindex-count" aria-live="polite"></p>
+    </div>
+
+    <div class="dindex reveal">
+      <table class="dindex__table" id="dindex">
+        <caption class="sr-only">LEAP datasets, newest first. Each row is one paper and its data package.</caption>
+        <thead>
+          <tr>
+            <th scope="col" data-key="paper">Paper and data</th>
+            <th scope="col" data-key="authors">Authors</th>
+            <th scope="col" class="dindex__period">Period</th>
+            <th scope="col" data-key="released" aria-sort="descending">Released</th>
+            <th scope="col"><span class="sr-only">Download</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for d in datasets %}
+          <tr data-paper="{{ d.paper | downcase | escape }}" data-authors="{{ d.authors | join: '; ' | downcase | escape }}" data-released="{{ d.released | date: '%Y-%m-%d' }}">
+            <td class="dindex__paper" data-label="Paper">
+              <a href="{{ d.url }}" rel="noopener">{{ d.paper }}</a>
+              {%- if d.outlet %}<span class="dindex__outlet">{{ d.outlet }}</span>{% endif %}
+              <span class="dindex__data">{{ d.data }}</span>
+            </td>
+            <td class="dindex__authors" data-label="Authors">
+              {%- for a in d.authors -%}
+                {%- assign p = a | split: ", " -%}
+                {%- unless forloop.first -%}{%- if forloop.last %} and {% else %}, {% endif -%}{%- endunless -%}
+                {{ p.last }} {{ p.first }}
+              {%- endfor -%}
+            </td>
+            <td class="dindex__period" data-label="Period">{{ d.period }}</td>
+            <td class="dindex__date" data-label="Released"><time datetime="{{ d.released | date: '%Y-%m-%d' }}">{{ d.released | date: "%-d %b %Y" }}</time></td>
+            <td class="dindex__get">
+              <a href="{{ d.url }}" rel="noopener" aria-label="Data on GitHub: {{ d.paper | escape }}">GitHub</a>
+              {%- if d.doi %}<a href="https://doi.org/{{ d.doi }}" rel="noopener" aria-label="DOI: {{ d.paper | escape }}">DOI</a>{% endif %}
+            </td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+      <p class="dindex__none" id="dindex-none" hidden>No dataset matches that search.</p>
+    </div>
+    <p class="dindex__note reveal">Every package is released under {{ datasets.first.licence | default: "CC BY 4.0" }} unless its README says otherwise.</p>
   </div>
 </section>
+
+<script>
+  (function () {
+    var table = document.getElementById("dindex"); if (!table) return;
+    var body = table.tBodies[0], rows = Array.prototype.slice.call(body.rows);
+    var tools = document.querySelector(".dindex__tools"), q = document.getElementById("dindex-q");
+    var count = document.getElementById("dindex-count"), none = document.getElementById("dindex-none");
+    var state = { key: "released", dir: -1 };
+    tools.hidden = false;
+
+    // Turn each sortable header into a button, so it works with a keyboard and a screen reader.
+    table.querySelectorAll("th[data-key]").forEach(function (th) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "dindex__sort"; b.textContent = th.textContent;
+      th.textContent = ""; th.appendChild(b);
+      b.addEventListener("click", function () {
+        var key = th.getAttribute("data-key");
+        // Dates start newest first; text starts A to Z.
+        state.dir = state.key === key ? -state.dir : (key === "released" ? -1 : 1);
+        state.key = key; render();
+      });
+    });
+
+    function render() {
+      rows.sort(function (a, b) {
+        var x = a.getAttribute("data-" + state.key), y = b.getAttribute("data-" + state.key);
+        if (x !== y) return x < y ? -state.dir : state.dir;
+        var s = a.getAttribute("data-paper"), t = b.getAttribute("data-paper");
+        return s < t ? -1 : s > t ? 1 : 0;
+      });
+      var term = (q.value || "").trim().toLowerCase(), shown = 0;
+      rows.forEach(function (r) {
+        var hit = !term || r.textContent.toLowerCase().indexOf(term) > -1;
+        r.hidden = !hit; if (hit) shown++;
+        body.appendChild(r);
+      });
+      table.querySelectorAll("th[data-key]").forEach(function (th) {
+        if (th.getAttribute("data-key") === state.key) th.setAttribute("aria-sort", state.dir > 0 ? "ascending" : "descending");
+        else th.removeAttribute("aria-sort");
+      });
+      count.textContent = shown + (shown === 1 ? " dataset" : " datasets");
+      none.hidden = shown > 0;
+    }
+    q.addEventListener("input", render);
+    render();
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DataCatalog",
+  "name": "LEAP data repository",
+  "url": "{{ '/data/' | absolute_url }}",
+  "publisher": { "@type": "Organization", "name": {{ site.data.site.name | jsonify }}, "url": "{{ '/' | absolute_url }}" },
+  "dataset": [
+    {%- for d in datasets %}{% unless forloop.first %},{% endunless %}
+    {
+      "@type": "Dataset",
+      "name": {{ "Data for: " | append: d.paper | jsonify }},
+      "description": {{ d.data | append: ". Replication data for the paper " | append: d.paper | append: "." | jsonify }},
+      "url": {{ d.url | jsonify }},
+      {%- if d.doi %}
+      "identifier": {{ "https://doi.org/" | append: d.doi | jsonify }},
+      {%- endif %}
+      "creator": [{% for a in d.authors %}{%- assign p = a | split: ", " -%}{ "@type": "Person", "familyName": {{ p.first | jsonify }}, "givenName": {{ p.last | jsonify }} }{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "datePublished": "{{ d.released | date: '%Y-%m-%d' }}",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "isAccessibleForFree": true
+    }
+    {%- endfor %}
+  ]
+}
+</script>
 
 <section class="band band--maroon" id="cite" aria-labelledby="cite-title">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="label label--accent">Using the data</p>
       <h2 class="h2" id="cite-title">How to cite</h2>
-      <p class="lede">The data are free to use and adapt. In return, cite the paper named on the dataset's card, and the repository too if the journal allows it. Each repository's README gives the full reference.</p>
+      <p class="lede">The data are free to use and adapt. In return, cite the paper the data belong to, and the package too, by its DOI where it has one. Each package's README gives the full reference.</p>
     </div>
   </div>
 </section>
@@ -40,14 +156,15 @@ description: "LEAP's data repository: open historical datasets on GitHub under a
   <div class="wrap">
     <div class="section-head reveal">
       <p class="label label--accent">For LEAP researchers</p>
-      <h2 class="h2" id="deposit-title">Depositing data</h2>
-      <p class="lede">Every LEAP release follows one package layout, so that a reader who has used one dataset can use them all.</p>
+      <h2 class="h2" id="deposit-title">Adding your data</h2>
+      <p class="lede">Every LEAP package follows one layout, so that a reader who has used one dataset can use them all. The data stay on GitHub; this page is the index to them.</p>
     </div>
-    <ul class="steps reveal">
-      <li><h3>Plain files</h3><p>Data as UTF-8 <code>CSV</code> only. No spreadsheets, no proprietary formats. Missing values are empty strings.</p></li>
-      <li><h3>Documented</h3><p>A <code>README</code>, a <code>LICENSE</code> (CC BY 4.0), a <code>CODEBOOK</code> and a machine-readable <code>variables.csv</code>.</p></li>
-      <li><h3>Loadable</h3><p>A <code>load.R</code> script that reads every file with the right types, so replication starts with one line.</p></li>
-    </ul>
-    <p class="lede reveal">To deposit a dataset, write to <a class="link" href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a>.</p>
+    <ol class="steps steps--4 reveal">
+      <li><h3>1. One repository per paper</h3><p>Create it in the <a class="link" href="{{ site.data.site.github }}" rel="noopener">leapstellenbosch</a> organisation on GitHub, named after the paper. Write to us for access.</p></li>
+      <li><h3>2. Package the data</h3><p>Data as UTF-8 <code>CSV</code>, a <code>README</code> with the paper's reference and the sources, a <code>CODEBOOK</code>, a <code>LICENSE</code> (CC BY 4.0), a <code>CITATION.cff</code> and a <code>load.R</code> script.</p></li>
+      <li><h3>3. Release it</h3><p>Publish a GitHub release and archive it on Zenodo, which gives the package a permanent DOI.</p></li>
+      <li><h3>4. List it here</h3><p>Add one entry to <code>_data/datasets.yml</code>. The table updates within a minute.</p></li>
+    </ol>
+    <p class="lede reveal">Leave out personal information about living people. Where a source may not be redistributed, link to it instead. Questions: <a class="link" href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a>.</p>
   </div>
 </section>

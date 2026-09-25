@@ -277,10 +277,12 @@ def render_nodes(nodes, ctx):
         elif k == "for":
             items = evaluate(n[2], ctx) or []
             if n[3]: items = items[:n[3]]
+            outer = ctx.get("forloop")               # restored afterwards, as Liquid does for nested loops
             for i, item in enumerate(items):
                 ctx[n[1]] = item
                 ctx["forloop"] = {"index": i + 1, "index0": i, "rindex": len(items) - i, "first": i == 0, "last": i == len(items) - 1, "length": len(items)}
                 out.append(render_nodes(n[4], ctx))
+            ctx["forloop"] = outer
         elif k == "include":
             sub = dict(ctx); sub["include"] = {name: atom(val, ctx) for name, val in n[2]}
             out.append(render((ROOT / "_includes" / n[1]).read_text(encoding="utf-8"), sub))

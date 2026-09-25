@@ -22,7 +22,7 @@ Open items, none of which blocks anything:
    - The three news posts in `_posts/`, each marked DRAFT in its front matter. The date of the Project 1834 conference (30 January 2026) is a guess.
    - Heinrich Nel's dissertation title and current position in `_data/alumni.yml` (graduated 2020).
    - Published articles by team members other than Johan: `_data/publications.yml` so far lists only his 2025–26 history articles.
-   - Dataset periods in `_data/datasets.yml` ("1700s–1800s" for the Cape Panel and "After 1902" for the Constabulary records are placeholders), and whether "Uprooted" and "Path dependence" belong on a history-only Data page.
+   - The period of the Constabulary records in `_data/datasets.yml` ("After 1902" is a placeholder), and Zenodo DOIs for the four data packages.
    - The captions of the letter sources in `_data/hero.yml`: the year of the first opgaafrol, the year of the Bantu World page, and the Rijksmuseum attribution of the Brandes watercolour.
    - The Kris Inwood Library text in `_data/site.yml` (his title, and "early in 2020" for the books' arrival), and the catalogue address when it exists.
    - Larger originals of the Karl Bergemann, Kate Ekama and Jan-Hendrik Pretorius portraits, which are only 300–400 px.
@@ -57,7 +57,7 @@ _data/site.yml              slogan, mission, addresses, links, social accounts, 
 _data/team.yml  board.yml  alumni.yml         people
 _data/projects.yml          project sections; the first four also appear on Home
 _data/publications.yml      journal articles first, then working papers; history papers only
-_data/datasets.yml          the cards on the Data page
+_data/datasets.yml          the data index (one row per paper) on the Data page
 _data/hero.yml              the 25 archival sources behind the letters on Home, with captions
 _data/gallery.yml           LEAP's own photographs in the About band on Home, with captions
 _layouts/                   default.html (page shell), post.html (a news item)

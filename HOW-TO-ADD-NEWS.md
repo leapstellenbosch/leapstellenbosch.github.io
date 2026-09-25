@@ -50,6 +50,8 @@ The same template is saved in `docs/news-template.md`.
    image_alt: Karl Bergemann receiving the prize in Durban
    ```
 
+If the photo is a small headshot of a speaker or visitor (narrower than about 1,000 pixels), add a third line, `image_portrait: true`. The post then shows it small and in black and white, instead of stretching it across the page.
+
 Use photos you took or have permission to use. Ask the people in a photo before you post it.
 
 ## Changing or removing a post

@@ -9,7 +9,7 @@ Everything on the site apart from news lives in eight small text files in the `_
 | `_data/alumni.yml` | The table of PhD graduates |
 | `_data/projects.yml` | The project sections on the Research page; the first four also appear on the home page |
 | `_data/publications.yml` | Working papers and published articles |
-| `_data/datasets.yml` | The cards on the Data page |
+| `_data/datasets.yml` | The data index (the table) on the Data page |
 | `_data/site.yml` | Mission text, slogan, address, email, social accounts, and the text about the Kris Inwood Library |
 | `_data/hero.yml` | The captions of the archival sources behind the four letters on the home page |
 | `_data/gallery.yml` | LEAP's own photographs in the "About LEAP" band on the home page, one drawn at random per visit, with captions |
@@ -59,22 +59,26 @@ A published article has `type: article`, a `journal:` and a `doi:`, and no `seri
 
 ## Worked example 2: a new dataset
 
-Open `_data/datasets.yml` and add:
+The Data page is an index: one row per paper whose data are public on GitHub. Put the data on GitHub first (the Data page lists the steps), then open `_data/datasets.yml` and add:
 
 ```yaml
-- name: Cape Colony wheat prices
+- paper: "Wheat, Wine and Wealth"
+  authors:
+    - "Fourie, Johan"
+    - "Links, Calumet"
+  outlet: Economic History of Developing Regions
+  data: Monthly wheat prices at the Cape Town market, transcribed from the Company's ledgers
   period: "1700–1800"
-  status: Released
-  description: >-
-    Monthly wheat prices at the Cape Town market, transcribed from the
-    Company's ledgers.
-  size: "1,200 monthly observations"
+  released: 2026-10-01
+  url: https://github.com/leapstellenbosch/wheat-wine-wealth
+  doi: 10.5281/zenodo.1234567
   licence: CC BY 4.0
-  url: https://github.com/leapstellenbosch/wheat-prices
-  citation: "Fourie, J. and Links, C. (2026). Wheat, Wine and Wealth."
 ```
 
-`status` is either `Released` or `Forthcoming`. The `>-` after `description:` lets the text run over several indented lines.
+- Write each author surname first, with a comma: `"Links, Calumet"`. The page shows "Calumet Links", and sorts by surname.
+- `released` is the date the data went public, in the form `YYYY-MM-DD`. The table lists the newest first.
+- Leave `outlet` empty for a working paper, and `doi` empty until Zenodo has issued one.
+- List only data that can be downloaded now. Nothing forthcoming.
 
 ## Worked example 3: a team photo
 
