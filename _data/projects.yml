@@ -2,6 +2,9 @@
 # The first four appear on the home page.
 # image   file stem in assets/img/projects/ (made by tools/treat-images.py)
 # body    one or two paragraphs; leave a blank line between paragraphs.
+# video   optional: a YouTube video id; the video then replaces the image. Its still is
+#         assets/img/lectures/<key>.webp (python tools/treat-images.py lectures).
+# video_title  optional: the video's title, read out by screen readers
 # TODO Johan: review all six blurbs.
 
 - key: project-1834
@@ -77,5 +80,9 @@
   image: chair
   image_alt: The Transvaal Share and Claim Exchange in Barberton in the 1880s
   url: https://www.ourlongwalk.com
+  video: bLRYrC0KetM
+  video_title: How economic history can benefit people today and generations to come
   body: |
-    The Chair takes economic history to readers outside the university. Its home is Our Long Walk, a blog and podcast on the economic history of South Africa and the continent. The Chair also makes written submissions on public policy, most recently on the school History curriculum and on national AI policy.
+    The Chair in Economics, History and Policy deepens research in economic history and carries its insights into public policy and public debate. It starts from the idea that stories and historical narratives shape economic behaviour and policy: as Robert Shiller argues, economic narratives can influence major events such as recessions. Through applied history, the use of historical analogies and lessons, the Chair helps policymakers ground their decisions in historical precedent. This matters most in developing countries, where past policies and economic crises are poorly understood and closer study of history offers real guidance.
+
+    Led by Johan Fourie, the Chair works across four themes: publications, pedagogy, policy and public engagement. Through new teaching materials, policy workshops and public outreach, from blogs and podcasts to graphic novels, it connects rigorous historical research with practice and gives decision-makers a long view of today's problems. Its home for public writing is Our Long Walk, a blog and podcast on the economic history of South Africa and the continent.

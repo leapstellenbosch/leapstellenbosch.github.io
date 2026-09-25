@@ -51,7 +51,7 @@ description: "The LEAP Lecture: since 2016, one scholar a year delivers LEAP's a
           </p>
         </div>
         {%- if l.video %}
-        <a class="lec__film" href="https://www.youtube.com/watch?v={{ l.video }}" rel="noopener" data-video="{{ l.video }}" aria-label="Play the {{ l.year }} LEAP Lecture{% if l.speaker %}, {{ l.speaker }}{% endif %}">
+        <a class="lec__film film" data-frame="lec__frame" href="https://www.youtube.com/watch?v={{ l.video }}" rel="noopener" data-video="{{ l.video }}" aria-label="Play the {{ l.year }} LEAP Lecture{% if l.speaker %}, {{ l.speaker }}{% endif %}">
           <img src="{{ base }}{{ l.year }}.webp" alt="" width="960" height="540" loading="lazy">
           <span class="lec__play" aria-hidden="true"></span>
         </a>
@@ -76,19 +76,3 @@ description: "The LEAP Lecture: since 2016, one scholar a year delivers LEAP's a
   </div>
 </section>
 
-<script>
-  // Play a lecture in place: swap the still for the video, only when a visitor asks for it.
-  document.querySelectorAll(".lec__film[data-video]").forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      if (e.metaKey || e.ctrlKey || e.shiftKey) return;
-      e.preventDefault();
-      var f = document.createElement("iframe");
-      f.src = "https://www.youtube-nocookie.com/embed/" + a.getAttribute("data-video") + "?autoplay=1&rel=0";
-      f.title = a.getAttribute("aria-label").replace(/^Play /, "");
-      f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
-      f.allowFullscreen = true;
-      f.className = "lec__frame";
-      a.replaceWith(f);
-    });
-  });
-</script>

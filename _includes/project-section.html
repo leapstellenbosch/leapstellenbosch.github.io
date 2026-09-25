@@ -1,7 +1,14 @@
 {%- assign p = include.project -%}
 <article class="project reveal" id="{{ p.key }}">
   <div class="project__media">
+    {%- if p.video %}
+    <a class="lec__film film" data-frame="lec__frame" href="https://www.youtube.com/watch?v={{ p.video }}" rel="noopener" data-video="{{ p.video }}" aria-label="Play the video: {{ p.video_title | default: p.name | escape }}">
+      <img src="{{ '/assets/img/lectures/' | relative_url }}{{ p.key }}.webp" alt="" width="960" height="540" loading="lazy">
+      <span class="lec__play" aria-hidden="true"></span>
+    </a>
+    {%- else %}
     {%- include picture.html dir="projects" stem=p.image small=700 large=1400 alt=p.image_alt -%}
+    {%- endif %}
   </div>
   <div>
     <h3 class="project__name">{{ p.name }}</h3>

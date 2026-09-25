@@ -48,6 +48,21 @@
     });
   });
 
+  /* ---------- Films: swap a still for its YouTube video, only when a visitor asks ---------- */
+  document.querySelectorAll("a.film[data-video]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + a.getAttribute("data-video") + "?autoplay=1&rel=0";
+      f.title = (a.getAttribute("aria-label") || "Video").replace(/^Play /, "");
+      f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      f.allowFullscreen = true;
+      f.className = a.getAttribute("data-frame") || "film-frame";
+      a.replaceWith(f);
+    });
+  });
+
   /* ---------- Mobile menu ---------- */
   var toggle = document.getElementById("navToggle");
   var menu = document.getElementById("menu");
