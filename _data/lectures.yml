@@ -1,0 +1,113 @@
+# The LEAP Lecture: one lecture a year since 2016, newest first. Shown on the Lectures page.
+# Edit in the browser: see HOW-TO-EDIT-CONTENT.md
+#
+# number       the lecture's number in the series
+# year         the year it was delivered
+# date         optional: the exact day, YYYY-MM-DD
+# speaker      who delivered it (for a panel, the panel's name)
+# affiliation  the speaker's university at the time
+# title        the title of the lecture; leave empty if unknown
+# note         optional: one line, for example the names of a panel
+# video        the YouTube video id (the part after watch?v=), empty until the film is up
+# news         optional: the address of the news post about it
+# upcoming     true for a lecture that has not happened yet; it is shown at the top of the page
+#
+# The still for each lecture is assets/img/lectures/<year>.webp, made by
+# `python tools/treat-images.py lectures` from the video's thumbnail in _sources/lectures/.
+
+- number: 11
+  year: 2026
+  date: 2026-11-09
+  speaker: Warren Whatley
+  affiliation: University of Michigan
+  title: Domar in Africa
+  note: 18:00, Stellenbosch. The venue will be announced.
+  video:
+  news: /news/2026/warren-whatley-to-deliver-the-eleventh-leap-lecture/
+  upcoming: true
+
+- number: 10
+  year: 2025
+  date: 2025-11-04
+  speaker: Meredith Paker
+  affiliation:
+  title: Understanding the Past with Machine Learning
+  video: jKFSPfh0Lkw
+  news: /news/2025/meredith-paker-delivers-the-tenth-leap-lecture/
+
+- number: 9
+  year: 2024
+  date:
+  speaker: Michael Muthukrishna
+  affiliation: London School of Economics
+  title:
+  note: On cultural evolution and public policy
+  video: qRURQrI4NWo
+
+- number: 8
+  year: 2023
+  date: 2023-08-16
+  speaker: Grant Parker
+  affiliation: Stanford University
+  title: "The Early Cape: Digital Progress, Problems, Prospects"
+  video: mF9DQplXpwg
+  news: /news/2023/grant-parker-delivers-the-eighth-leap-lecture/
+
+- number: 7
+  year: 2022
+  date:
+  speaker:
+  affiliation:
+  title:
+  video: _mQQDxt-qmU
+
+- number: 6
+  year: 2021
+  date:
+  speaker: Dozie Okoye
+  affiliation: Dalhousie University
+  title: Perspectives on Christian Missions and African Social Development
+  video: 9pTFkClYZPU
+
+- number: 5
+  year: 2020
+  date: 2020-10-08
+  speaker: A roundtable on women and work
+  affiliation:
+  title: Women and Work in History and Economics
+  note: Alice Evans, Emmanuel Akyeampong, Jane Humphries, Joyce Burnette and Ushehwedu Kufakurinani, online
+  video: 6SeLICFMF2k
+
+- number: 4
+  year: 2019
+  date: 2019-10-09
+  speaker: Suresh Naidu
+  affiliation: Columbia University
+  title: "Terms of Service: Monopsony from American Slavery to Amazon Mechanical Turk"
+  video: VH26hsBknWo
+
+- number: 3
+  year: 2018
+  date: 2018-10-03
+  speaker: Anthony Hopkins
+  affiliation: University of Cambridge
+  title: Fifty Years of African Economic History
+  video: eZBDjSHPAvE
+
+- number: 2
+  year: 2017
+  date: 2017-10-25
+  speaker: Emmanuel Akyeampong
+  affiliation: Harvard University
+  title: African Socialism
+  note: Opened the African Economic History Network meeting at STIAS
+  video: hwYCe-49c-c
+
+- number: 1
+  year: 2016
+  date:
+  speaker: Marianne Wanamaker
+  affiliation: University of Tennessee
+  title:
+  note: December 2016
+  video: RMfgCgshWaQ

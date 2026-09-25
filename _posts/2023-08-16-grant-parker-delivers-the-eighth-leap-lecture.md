@@ -8,4 +8,6 @@ image_alt: "Grant Parker with LEAP colleagues and guests after the lecture"
 ---
 On 16 August 2023 Grant Parker (Stanford University) delivered the eighth annual LEAP Lecture.
 
-[Watch the full lecture](https://www.youtube.com/watch?v=mF9DQplXpwg).
+His title was *The Early Cape: Digital Progress, Problems, Prospects*.
+
+[Watch the full lecture](https://www.youtube.com/watch?v=mF9DQplXpwg), or see [all LEAP Lectures](/lectures/).

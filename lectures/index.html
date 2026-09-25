@@ -1,0 +1,94 @@
+---
+layout: default
+title: Lectures
+section: lectures
+description: "The LEAP Lecture: since 2016, one scholar a year delivers LEAP's annual lecture in Stellenbosch. Every lecture, with its film."
+---
+{%- include page-head.html motif="paper" label="Lectures" title="The LEAP Lecture" lede="Since 2016 LEAP has invited one scholar a year to Stellenbosch to deliver the LEAP Lecture. Here is every lecture so far, with its film." -%}
+{%- assign next = site.data.lectures | where: "upcoming", true | first -%}
+{%- assign base = '/assets/img/lectures/' | relative_url -%}
+
+{%- if next %}
+<section class="band" aria-labelledby="next-title">
+  <div class="wrap lec-next reveal">
+    <img class="lec-next__img" src="{{ '/assets/img/news/warren-whatley.jpg' | relative_url }}" alt="{{ next.speaker }}" width="274" height="411">
+    <div>
+      <p class="label label--accent">Next · No. {{ next.number }}</p>
+      <p class="lec-next__date"><time datetime="{{ next.date | date: '%Y-%m-%d' }}">{{ next.date | date: "%-d %B %Y" }}</time></p>
+      <h2 class="h2" id="next-title">{{ next.speaker }}</h2>
+      <p class="lec-next__aff">{{ next.affiliation }}</p>
+      {%- if next.title %}<p class="lec-next__title">{{ next.title }}</p>{% endif %}
+      {%- if next.note %}<p class="lec-next__note">{{ next.note }}</p>{% endif %}
+      {%- if next.news %}<div class="btn-row"><a class="btn btn--gold" href="{{ next.news | relative_url }}">About the lecture</a></div>{% endif %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<section class="band band--tight-top" aria-labelledby="register-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="label label--accent">2016 to the present</p>
+      <h2 class="h2" id="register-title">The lectures</h2>
+    </div>
+    <ol class="register">
+      {%- for l in site.data.lectures %}
+      {%- unless l.upcoming %}
+      <li class="lec reveal">
+        <div class="lec__mark">
+          <span class="lec__year">{{ l.year }}</span>
+          <span class="lec__no">No. {{ l.number }}</span>
+        </div>
+        <div class="lec__body">
+          <h3 class="lec__speaker">{% if l.speaker %}{{ l.speaker }}{% else %}Speaker to be confirmed{% endif %}</h3>
+          {%- if l.affiliation %}<p class="lec__aff">{{ l.affiliation }}</p>{% endif %}
+          {%- if l.title %}<p class="lec__title">{{ l.title }}</p>{% endif %}
+          {%- if l.note %}<p class="lec__note">{{ l.note }}</p>{% endif %}
+          <p class="lec__links">
+            {%- if l.date %}<time datetime="{{ l.date | date: '%Y-%m-%d' }}">{{ l.date | date: "%-d %B %Y" }}</time>{% endif %}
+            {%- if l.news %}<a href="{{ l.news | relative_url }}">News</a>{% endif %}
+            {%- if l.video %}<a href="https://www.youtube.com/watch?v={{ l.video }}" rel="noopener">YouTube</a>{% endif %}
+          </p>
+        </div>
+        {%- if l.video %}
+        <a class="lec__film" href="https://www.youtube.com/watch?v={{ l.video }}" rel="noopener" data-video="{{ l.video }}" aria-label="Play the {{ l.year }} LEAP Lecture{% if l.speaker %}, {{ l.speaker }}{% endif %}">
+          <img src="{{ base }}{{ l.year }}.webp" alt="" width="960" height="540" loading="lazy">
+          <span class="lec__play" aria-hidden="true"></span>
+        </a>
+        {%- endif %}
+      </li>
+      {%- endunless %}
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="band band--paper" aria-labelledby="series-title">
+  <div class="wrap lec-series reveal">
+    <div>
+      <p class="label">The series</p>
+      <h2 class="h2" id="series-title">One lecture a year</h2>
+    </div>
+    <div>
+      <p>The LEAP Lecture brings a leading scholar of economic history to Stellenbosch each year, to speak to students, colleagues and the public. The first, in December 2016, was given by Marianne Wanamaker. In 2020 the lecture became an online roundtable, and in 2025 it closed a conference on AI and economic history.</p>
+      <div class="btn-row"><a class="btn btn--maroon" href="https://www.youtube.com/@leapstellenbosch" rel="noopener">LEAP on YouTube</a></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Play a lecture in place: swap the still for the video, only when a visitor asks for it.
+  document.querySelectorAll(".lec__film[data-video]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + a.getAttribute("data-video") + "?autoplay=1&rel=0";
+      f.title = a.getAttribute("aria-label").replace(/^Play /, "");
+      f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      f.allowFullscreen = true;
+      f.className = "lec__frame";
+      a.replaceWith(f);
+    });
+  });
+</script>

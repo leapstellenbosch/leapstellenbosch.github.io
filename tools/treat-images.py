@@ -294,6 +294,14 @@ if __name__ == "__main__":
         for stem, (src, box) in QUOTES.items():
             export(duotone(load(ELLIOTT / src, box), "maroon", vignette=0.2), stem, OUT / "archive")
             print("quote", stem)
+    if want("lectures"):
+        # Stills from LEAP's own lecture videos (YouTube thumbnails, 1280x720), toned like the archive
+        src_dir, out = ROOT / "_sources" / "lectures", OUT / "lectures"
+        out.mkdir(parents=True, exist_ok=True)
+        for f in sorted(src_dir.glob("*.jpg")):
+            im = duotone(load(f), "maroon", grain=0.03, vignette=0.2).resize((960, 540), Image.LANCZOS)
+            im.save(out / f"{f.stem}.webp", quality=80, method=6)
+            print("lecture", f.stem)
     if want("gallery"):
         (OUT / "gallery").mkdir(parents=True, exist_ok=True)
         for stem, (src, box) in GALLERY.items():

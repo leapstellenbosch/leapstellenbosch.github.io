@@ -12,6 +12,7 @@ Everything on the site apart from news lives in eight small text files in the `_
 | `_data/datasets.yml` | The data index (the table) on the Data page |
 | `_data/site.yml` | Mission text, slogan, address, email, social accounts, and the text about the Kris Inwood Library |
 | `_data/hero.yml` | The captions of the archival sources behind the four letters on the home page |
+| `_data/lectures.yml` | The LEAP Lectures page: every lecture since 2016, with its film. Mark the coming lecture `upcoming: true`; after it has happened, remove that line and add the video id |
 | `_data/quotes.yml` | The quotations on the home page, one drawn at random per visit, each over an archival photograph |
 | `_data/gallery.yml` | LEAP's own photographs in the "About LEAP" band on the home page, one drawn at random per visit, with captions |
 

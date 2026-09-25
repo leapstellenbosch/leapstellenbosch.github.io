@@ -13,4 +13,6 @@ In 1970 the economist Evsey Domar argued that where land is abundant and labour 
 
 Whatley taught at Michigan from 1981 to 2016, in economics and in Afroamerican and African Studies. He is a former president of the National Economic Association and has served on the editorial boards of the *Journal of Economic History* and *Explorations in Economic History*. His research covers the economic history of Africa and of African Americans in the United States, and his book *Slavery, Freedom, and Development: How Africa Became the Mirror Image of Europe* was published by Cambridge University Press. He discussed the book on the [Our Long Walk podcast](https://www.ourlongwalk.com/p/why-didnt-slavery-wither-away) in May.
 
+See [all LEAP Lectures since 2016](/lectures/), each with its film.
+
 The lecture closes the day of the LEAP workshop on [culture and economic policy](/news/2026/leap-co-hosts-a-workshop-on-culture-and-economic-policy/).
