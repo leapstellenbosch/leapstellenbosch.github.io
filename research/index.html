@@ -72,3 +72,25 @@ description: "LEAP's research: current projects, working papers and publications
     </dl>
   </div>
 </section>
+
+<section class="band band--maroon" id="terreblanche" aria-labelledby="terreblanche-title">
+  {%- assign st = site.data.site.terreblanche %}
+  <div class="wrap sampie">
+    <figure class="sampie__portrait reveal">
+      <img src="{{ '/assets/img/archive/terreblanche.webp' | relative_url }}" alt="Sampie Terreblanche, printed as a halftone" width="900" height="824" loading="lazy">
+      <figcaption><span class="sampie__name">Sampie Terreblanche</span><span class="sampie__dates">1933–2018</span></figcaption>
+    </figure>
+    <div class="reveal">
+      <p class="label label--accent">Repository</p>
+      <h2 class="h2" id="terreblanche-title">{{ st.name }}</h2>
+      <p class="project__strap">{{ st.strap }}</p>
+      <div class="project__body">{{ st.body | markdownify }}</div>
+      <ul class="sampie__books" aria-label="Books in the repository">
+        {%- for b in st.books %}
+        <li>{{ b }}</li>
+        {%- endfor %}
+      </ul>
+      <div class="btn-row"><a class="btn btn--gold" href="{{ st.url }}" rel="noopener">Visit the repository</a></div>
+    </div>
+  </div>
+</section>

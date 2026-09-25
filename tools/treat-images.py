@@ -224,6 +224,24 @@ def monochrome(im, grain=0.035):
     return g.convert("RGB")
 
 
+def halftone(im, width=900, cell=7, ink="#120a0e", dot="#d4bf8a"):
+    """A newspaper halftone: one gold dot per cell, its size set by the brightness beneath."""
+    g = ImageOps.autocontrast(im.convert("L"), cutoff=1)
+    g = g.resize((width, round(g.height * width / g.width)), Image.LANCZOS)
+    k = 4                                                     # draw large, then shrink, for smooth dots
+    out = Image.new("RGB", (g.width * k, g.height * k), hex2rgb(ink))
+    d = ImageDraw.Draw(out)
+    small = g.resize((g.width // cell + 1, g.height // cell + 1), Image.BOX)
+    for y in range(small.height):
+        for x in range(small.width):
+            v = small.getpixel((x, y)) / 255
+            r = cell * k * 0.64 * v ** 1.15
+            if r > 0.4 * k:
+                cx, cy = (x + 0.5) * cell * k, (y + 0.5) * cell * k
+                d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=hex2rgb(dot))
+    return out.resize(g.size, Image.LANCZOS)
+
+
 def social_card():
     """1200x630 Open Graph card: LEAP set in Raleway ExtraBold, each letter a window onto its texture."""
     W, H = 1200, 630
@@ -302,6 +320,11 @@ if __name__ == "__main__":
             im = duotone(load(f), "maroon", grain=0.03, vignette=0.2).resize((960, 540), Image.LANCZOS)
             im.save(out / f"{f.stem}.webp", quality=80, method=6)
             print("lecture", f.stem)
+    if want("terreblanche"):
+        # Sampie Terreblanche, a portrait: see _sources/terreblanche/PROVENANCE.md
+        im = load(ROOT / "_sources" / "terreblanche" / "sampie-terreblanche-portrait.jpg", (0.18, 0.00, 0.92, 1.00))
+        halftone(im).save(OUT / "archive" / "terreblanche.webp", quality=82, method=6)
+        print("terreblanche")
     if want("gallery"):
         (OUT / "gallery").mkdir(parents=True, exist_ok=True)
         for stem, (src, box) in GALLERY.items():

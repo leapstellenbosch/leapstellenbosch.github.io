@@ -68,3 +68,18 @@ library:
       value: LEAP office, fifth floor, Schumann Building
     - label: Use
       value: Reference only
+
+# The Sampie Terreblanche Research Repository: a section on the Research page, after the library
+terreblanche:
+  name: The Sampie Terreblanche Research Repository
+  strap: The work of a political economist and public intellectual
+  url: https://www.ekon.sun.ac.za/sampieterreblanche/
+  body: |
+    Sampie Terreblanche was a professor of economics at Stellenbosch University and, for half a century, one of South Africa's most outspoken public intellectuals. His *A History of Inequality in South Africa, 1652–2002* became the standard account of the country's systemic inequality, and *Lost in Transformation* (2012) carried the argument into the democratic era.
+
+    The Department of Economics keeps a repository of his work: his books and monographs, the reviews they received, and his life and work as remembered by his family and colleagues.
+  books:
+    - "A History of Inequality in South Africa, 1652–2002"
+    - Lost in Transformation
+    - "Western Empires, Christianity and the Inequalities between the West and the Rest, 1500–2010"
+    - Verdeelde land

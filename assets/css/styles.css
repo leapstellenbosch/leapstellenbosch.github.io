@@ -363,6 +363,17 @@ a.card:hover .card__img{ transform:scale(1.03); }
 .affil__list a::after{ content:"\2197"; margin-left:.35em; font-size:.8em; color:var(--accent-text); }
 .affil__list a:hover, .affil__list a:focus-visible{ color:var(--gold-soft); border-bottom-color:var(--hair-gold); }
 
+/* Research: the Sampie Terreblanche Research Repository, with a halftone portrait */
+.sampie{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.35fr); gap:clamp(2.5rem,6vw,6rem); align-items:start; scroll-margin-top:5rem; }
+.sampie__portrait{ position:relative; margin:.8rem 0 0; }
+.sampie__portrait img{ display:block; width:100%; height:auto; outline:1px solid var(--hair-gold); outline-offset:12px; }
+.sampie__portrait figcaption{ position:absolute; left:0; right:0; bottom:0; display:flex; justify-content:space-between; align-items:baseline; gap:1rem; padding:3.5rem 1.2rem 1rem; background:linear-gradient(180deg, transparent, rgba(18,10,14,.92)); }
+.sampie__name{ font-size:.7rem; font-weight:600; letter-spacing:.24em; text-transform:uppercase; color:#fff; }
+.sampie__dates{ font-family:var(--serif); font-style:italic; font-size:1.3rem; color:var(--gold-soft); }
+.sampie .project__strap{ margin-top:.8rem; }
+.sampie__books{ margin-top:1.6rem; border-top:1px solid var(--hair-gold); }
+.sampie__books li{ padding:.7rem 0; border-bottom:1px solid var(--hair-gold); font-style:italic; font-weight:300; color:var(--paper-text); }
+
 /* LEAP Lectures: the next lecture, then a register of every lecture on a gold spine */
 .lec-next{ display:grid; grid-template-columns:auto 1fr; gap:clamp(2rem,5vw,4.5rem); align-items:center; }
 .lec-next__img{ width:clamp(150px,18vw,220px); height:auto; filter:grayscale(1); outline:1px solid var(--hair-gold); outline-offset:10px; }
@@ -593,7 +604,8 @@ a.paper__title:hover, .paper__title a:hover{ color:var(--ink); text-decoration:u
   .nav__links{ display:none; }
   .nav__toggle{ display:block; }
   .nav__logo img{ height:40px; }
-  .mission, .contact, .su-band__inner, .library{ grid-template-columns:1fr; }
+  .mission, .contact, .su-band__inner, .library, .sampie{ grid-template-columns:1fr; }
+  .sampie__portrait{ max-width:26rem; }
   .lec{ grid-template-columns:6rem 1fr; }
   .lec__film, .lec__frame{ grid-column:2; margin-top:1.2rem; max-width:28rem; }
   .register::before{ left:calc(6rem - 1px); }
