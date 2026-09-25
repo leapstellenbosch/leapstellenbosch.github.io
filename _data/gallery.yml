@@ -1,0 +1,59 @@
+# LEAP's own photographs, shown in the "About LEAP" band on the home page.
+# Each visit draws one photograph at random. The first entry is the one shown
+# if a browser has JavaScript switched off.
+#
+# image    file name in assets/img/gallery/, without the -1200.webp ending. The files
+#          are made by tools/treat-images.py (see the GALLERY list there), which
+#          crops each photograph to 3:2 and turns it black and white. To add one,
+#          put the original in _sources/gallery/, add it to that list, run
+#          `python tools/treat-images.py gallery`, then add an entry here.
+# caption  one short line, no full stop
+# year     the year the photograph was taken
+# alt      what the photograph shows, for readers who cannot see it
+# link     optional: a web address the caption links to
+
+- image: launch-2015
+  caption: The launch of LEAP
+  year: 2015
+  alt: About twenty guests stand together in front of a wall covered in handwritten notes that read "There ain't no rules around here"
+
+- image: early-lab-2017
+  caption: The early LEAP lab, with Michiel de Haas and David Bijsterbosch
+  year: 2017
+  alt: Two researchers work on laptops at tables covered in printed African cloth, below a row of framed economic history posters
+
+- image: class-2017
+  caption: The LEAP class of 2017
+  year: 2017
+  alt: Sixteen students stand in a row in front of a wall covered in handwritten notes
+
+- image: aehn-2017
+  caption: Bokang Mpeta thanks Trudi Makhaya at the African Economic History Network meeting
+  year: 2017
+  alt: Bokang Mpeta hands a gift to Trudi Makhaya in front of a screen showing the LEAP logo
+
+- image: graduation-2018
+  caption: Abel Gwaindepi at his PhD graduation, with Johan Fourie and Krige Siebrits
+  year: 2018
+  alt: Abel Gwaindepi, in a doctoral gown, stands between two colleagues at a Stellenbosch University graduation
+
+- image: new-york-2018
+  caption: Johan Fourie gives a LEAP talk in New York
+  year: 2018
+  alt: Johan Fourie speaks beside a screen headed "LEAP Stellenbosch" to an audience seated in a large open room
+
+- image: biography-2019
+  caption: The first meeting of the Biography group
+  year: 2019
+  alt: About twenty-five students and staff sit in a circle of chairs in a seminar room lined with bookshelves
+
+- image: fugitives-2021
+  caption: Fugitives, an art installation
+  year: 2021
+  alt: A framed portrait of a young woman in an oval mount hangs in a darkened space
+  link: https://www.youtube.com/watch?v=wKyt0xyT3Qo
+
+- image: colloquium-2023
+  caption: Munashe Chideya presents at a LEAP colloquium
+  year: 2023
+  alt: Munashe Chideya stands beside a lectern in a panelled library, next to a projected slide with the LEAP logo

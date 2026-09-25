@@ -4,7 +4,7 @@ Everything on the site apart from news lives in eight small text files in the `_
 
 | File | What it controls |
 |---|---|
-| `_data/team.yml` | The ten team cards on the Team page |
+| `_data/team.yml` | The team cards on the Team page |
 | `_data/board.yml` | The Governing Board |
 | `_data/alumni.yml` | The table of PhD graduates |
 | `_data/projects.yml` | The project sections on the Research page; the first four also appear on the home page |
@@ -12,6 +12,7 @@ Everything on the site apart from news lives in eight small text files in the `_
 | `_data/datasets.yml` | The cards on the Data page |
 | `_data/site.yml` | Mission text, slogan, address, email, social accounts, and the text about the Kris Inwood Library |
 | `_data/hero.yml` | The captions of the archival sources behind the four letters on the home page |
+| `_data/gallery.yml` | LEAP's own photographs in the "About LEAP" band on the home page, one drawn at random per visit, with captions |
 
 ## The general method
 

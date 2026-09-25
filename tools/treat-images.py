@@ -23,6 +23,7 @@ Image.MAX_IMAGE_PIXELS = None
 ROOT = Path(__file__).resolve().parent.parent
 SRC = Path(r"C:\Users\johanf\Dropbox\5 LEAP")
 HEADSHOT_SRC = ROOT / "_sources" / "headshots"      # photos found for members without a studio portrait
+GALLERY_SRC = ROOT / "_sources" / "gallery"         # LEAP's own photographs, supplied by Johan (originals not in git)
 OUT = ROOT / "assets" / "img"
 FONTS = ROOT / "assets" / "fonts"
 
@@ -125,6 +126,19 @@ TEAM = {
     "jan-hendrik-pretorius":(HEADSHOT_SRC / "jan-hendrik-pretorius.webp", 0.50, 0.42, 1.00),
     "lauren-stevens-harris":(HEADSHOT_SRC / "lauren-stevens-harris.webp", 0.50, 0.42, 1.00),
 }
+# ---- LEAP photographs for the About band on the home page (_data/gallery.yml).
+# stem -> (source file, crop box). Every crop is 3:2; the output is black and white.
+GALLERY = {
+    "graduation-2018":  ("Abel Gwaindepi graduates with Johan Fourie and Krige Siebrits.jpg",               (0.00, 0.12, 1.00, 0.62)),
+    "biography-2019":   ("Biography first meeting 2019.jpg",                                                (0.00, 0.08, 1.00, 0.92)),
+    "aehn-2017":        ("Bokang Mpeta thanks Trudi Makhaya at AEHN 2017.jpg",                              (0.00, 0.00, 1.00, 1.00)),
+    "class-2017":       ("Classof2017.jpg",                                                                 (0.00, 0.10, 1.00, 0.99)),
+    "fugitives-2021":   ("Fugitives art installation (httpswww.youtube.comwatchv=wKyt0xyT3Qo).jpg",          (0.08, 0.00, 0.92, 1.00)),
+    "new-york-2018":    ("Johan Fourie presents a LEAP talk in New York.jpg",                               (0.00, 0.00, 1.00, 1.00)),
+    "colloquium-2023":  ("Munashe Chideya at a LEAP Colloquium 2023.jpeg",                                  (0.00, 0.03, 1.00, 0.92)),
+    "launch-2015":      ("The launch function of LEAP (2015).jpg",                                          (0.16, 0.00, 0.84, 1.00)),
+    "early-lab-2017":   ("The very early LEAP lab (with Michiel de Haas and David Bijsterbosch).jpg",       (0.00, 0.00, 1.00, 1.00)),
+}
 BOARD = {
     "ada-jansen":          (HEADSHOT_SRC / "ada-jansen.jpg",      0.47, 0.24, 1.00),
     "sophia-du-plessis":   (SRC / r"Photos\Faces\Sophia.jpg",     0.50, 0.180, 0.78),
@@ -188,6 +202,14 @@ def headshot(path, cx, cy, s, out, size=600):
     im = im.crop((l, t, l + side, t + side)).resize((size, size), Image.LANCZOS)
     out.parent.mkdir(parents=True, exist_ok=True)
     im.save(out, quality=84, optimize=True, progressive=True)
+
+
+def monochrome(im, grain=0.035):
+    """Black and white with a little film grain, for LEAP's own photographs."""
+    g = ImageOps.autocontrast(im.convert("L"), cutoff=0.5)
+    if grain:
+        g = Image.blend(g, ImageChops.overlay(g, Image.effect_noise(g.size, 40)), grain * 4)
+    return g.convert("RGB")
 
 
 def social_card():
@@ -256,5 +278,13 @@ if __name__ == "__main__":
             headshot(src, cx, cy, s, OUT / "team" / f"{key}.jpg"); print("team", key)
         for key, (src, cx, cy, s) in BOARD.items():
             headshot(src, cx, cy, s, OUT / "board" / f"{key}.jpg"); print("board", key)
+    if want("gallery"):
+        (OUT / "gallery").mkdir(parents=True, exist_ok=True)
+        for stem, (src, box) in GALLERY.items():
+            im = monochrome(load(GALLERY_SRC / src, box).resize((1200, 800), Image.LANCZOS))
+            for w in (1200, 700):
+                r = im if w == 1200 else im.resize((w, round(w * 2 / 3)), Image.LANCZOS)
+                r.save(OUT / "gallery" / f"{stem}-{w}.webp", quality=80, method=6)
+            print("gallery", stem)
     if want("card"):
         social_card(); favicon_png(); print("card + favicon")

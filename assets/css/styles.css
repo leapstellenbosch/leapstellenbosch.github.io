@@ -263,16 +263,19 @@ section{ position:relative; }
 .page--team .page-head__rule{ background:linear-gradient(90deg, var(--p-plum) 0 40%, var(--gold) 40% 70%, var(--mint) 70% 100%); }
 
 /* =============================================================================
-   MISSION + FACTS (home)
+   MISSION + PHOTOGRAPH (home)
    ========================================================================== */
 .mission{ display:grid; grid-template-columns:1.5fr 1fr; gap:clamp(2.5rem,6vw,6rem); align-items:start; }
 .mission__text{ font-weight:300; font-size:clamp(1.2rem,2.1vw,1.7rem); line-height:1.5; color:#fff; }
 .mission__founding{ margin-top:1.6rem; color:var(--paper-dim); max-width:48ch; }
 .mission__values{ margin-top:1.4rem; font-family:var(--serif); font-style:italic; font-size:1.15rem; color:var(--gold-soft); }
-.facts{ display:grid; gap:0; border-top:1px solid var(--hair-gold); }
-.facts li{ display:flex; align-items:baseline; gap:1.2rem; padding:1.3rem 0; border-bottom:1px solid var(--hair-gold); }
-.facts__n{ font-family:var(--serif); font-style:italic; font-weight:300; font-size:clamp(2.6rem,5vw,3.8rem); line-height:1; color:var(--gold-soft); flex:0 0 4.4ch; }
-.facts__t{ font-size:.92rem; color:var(--paper-dim); }
+/* One of LEAP's own photographs, mounted like a print: black and white, a gold hairline set off the edge */
+.moment{ margin:2.9rem 0 0; }
+.moment__img{ display:block; width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; background:var(--ink-2); filter:grayscale(1); outline:1px solid var(--hair-gold); outline-offset:10px; }
+.moment__cap{ display:flex; align-items:baseline; justify-content:space-between; gap:1.2rem; margin-top:1.6rem; padding-top:1rem; border-top:1px solid var(--hair-gold); font-size:.88rem; line-height:1.5; color:var(--paper-dim); }
+.moment__cap a{ color:var(--paper-text); border-bottom:1px solid var(--hair-gold); transition:border-color .25s var(--ease); }
+.moment__cap a:hover, .moment__cap a:focus-visible{ border-bottom-color:var(--gold); }
+.moment__year{ flex:none; font-family:var(--serif); font-style:italic; font-size:1.25rem; line-height:1; color:var(--gold-soft); }
 
 /* =============================================================================
    CARDS
@@ -523,6 +526,8 @@ a.paper__title:hover, .paper__title a:hover{ color:var(--ink); text-decoration:u
   .nav__toggle{ display:block; }
   .nav__logo img{ height:40px; }
   .mission, .contact, .su-band__inner, .library{ grid-template-columns:1fr; }
+  .moment{ margin-top:0; }
+  .moment__img{ outline-offset:6px; }
   .grid--3, .grid--4{ grid-template-columns:repeat(2,1fr); }
   .grid--5{ grid-template-columns:repeat(3,1fr); }
   .board{ grid-template-columns:repeat(2,1fr); }

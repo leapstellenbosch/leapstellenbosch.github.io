@@ -59,12 +59,14 @@ _data/projects.yml          project sections; the first four also appear on Home
 _data/publications.yml      journal articles first, then working papers; history papers only
 _data/datasets.yml          the cards on the Data page
 _data/hero.yml              the 25 archival sources behind the letters on Home, with captions
+_data/gallery.yml           LEAP's own photographs in the About band on Home, with captions
 _layouts/                   default.html (page shell), post.html (a news item)
 _includes/                  nav, footer, page head, cards, paper rows, project sections, picture
 assets/css/styles.css       the design system; colours and type are tokens in :root
 assets/js/main.js           nav scroll state, mobile menu, scroll reveal, tap-to-caption on the letters
 assets/fonts/               Raleway (SU corporate typeface) and Crimson Pro Italic (OFL), subset to Latin
 assets/img/hero/            the treated sources behind the Home letters, 900px WebP
+assets/img/gallery/         LEAP photographs, black and white, 3:2, 1200px and 700px WebP
 assets/img/archive/         treated archival photographs: page motifs, quote band, social card letters
 assets/img/projects/        treated project photographs
 assets/img/team/ board/     headshots, 600px square
@@ -74,6 +76,7 @@ tools/treat-images.py       the photo pipeline (duotone, grain, crops). Run by h
 tools/make-motifs.py        draws the contour-map and weave motifs as SVG
 tools/preview.py            rough local preview with Python only, no Ruby
 _sources/headshots/         original headshots, with PROVENANCE.md (where each came from)
+_sources/gallery/           original LEAP photographs, named by their descriptions (kept in Dropbox, not in git)
 _sources/hero/              SOURCES.md (origin and permission of every letter source) and one rendered census page
 docs/news-template.md       copy-paste template for a news item
 llms.txt                    plain-text index of the site for AI crawlers
@@ -128,7 +131,7 @@ The treated images are committed, so this is needed only when a source changes o
 
 ```
 python tools/treat-images.py            # everything
-python tools/treat-images.py hero       # only the Home letters; also: archive, projects, faces, card
+python tools/treat-images.py hero       # only the Home letters; also: archive, projects, faces, gallery, card
 python tools/make-motifs.py
 ```
 
