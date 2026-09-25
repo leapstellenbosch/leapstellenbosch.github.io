@@ -30,7 +30,7 @@
   year: 2025
   date: 2025-11-04
   speaker: Meredith Paker
-  affiliation:
+  affiliation: University of Oxford
   title: Understanding the Past with Machine Learning
   video: jKFSPfh0Lkw
   news: /news/2025/meredith-paker-delivers-the-tenth-leap-lecture/
@@ -40,8 +40,7 @@
   date:
   speaker: Michael Muthukrishna
   affiliation: London School of Economics
-  title:
-  note: On cultural evolution and public policy
+  title: Cultural Evolution and Public Policy
   video: qRURQrI4NWo
 
 - number: 8
@@ -56,9 +55,9 @@
 - number: 7
   year: 2022
   date:
-  speaker:
-  affiliation:
-  title:
+  speaker: Anne McCants
+  affiliation: Massachusetts Institute of Technology
+  title: What Makes for Good Social Science History?
   video: _mQQDxt-qmU
 
 - number: 6
@@ -108,6 +107,6 @@
   date:
   speaker: Marianne Wanamaker
   affiliation: University of Tennessee
-  title:
+  title: "150 Years of Economic Progress for African American Men: Measuring Outcomes and Sizing up Roadblocks"
   note: December 2016
   video: RMfgCgshWaQ
