@@ -123,6 +123,7 @@ TEAM = {
     "noah-macdonald":       (HEADSHOT_SRC / "noah-macdonald.jpg",        0.53, 0.42, 0.62),
     "etienne-le-rossignol": (HEADSHOT_SRC / "etienne-le-rossignol.jpg",  0.50, 0.42, 1.00),
     "jan-hendrik-pretorius":(HEADSHOT_SRC / "jan-hendrik-pretorius.webp", 0.50, 0.42, 1.00),
+    "lauren-stevens-harris":(HEADSHOT_SRC / "lauren-stevens-harris.webp", 0.50, 0.42, 1.00),
 }
 BOARD = {
     "ada-jansen":          (HEADSHOT_SRC / "ada-jansen.jpg",      0.47, 0.24, 1.00),

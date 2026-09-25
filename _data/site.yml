@@ -52,10 +52,10 @@ github: https://github.com/leapstellenbosch
 links:
   department:
     name: Department of Economics
-    url: https://www.ekon.sun.ac.za
+    url: https://www.ekon.sun.ac.za/
   university:
     name: Stellenbosch University
-    url: https://www.su.ac.za
+    url: https://www.su.ac.za/en
 
 # The Kris Inwood Library: a section on the Research page, linked from the Contact page
 library:

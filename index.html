@@ -29,7 +29,7 @@ description: "LEAP, the Laboratory for the Economics of Africa's Past at Stellen
         });
       })();
     </script>
-    <p class="label hero__label">{{ s.name }} · Stellenbosch University</p>
+    <p class="label hero__label">{{ s.name }} · <a href="{{ s.links.department.url }}" rel="noopener">{{ s.links.department.name }}</a> · <a href="{{ s.links.university.url }}" rel="noopener">{{ s.links.university.name }}</a></p>
     <h1 class="hero__title" id="hero-title">{{ s.headline }}</h1>
     <p class="hero__sub">We build large historical datasets from African archives and use them to explain the continent's long-run economic development.</p>
     <div class="hero__cta">

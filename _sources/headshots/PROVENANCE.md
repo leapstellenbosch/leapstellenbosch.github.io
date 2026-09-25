@@ -71,3 +71,12 @@ Johan asked for the white-background LEAP portraits of Karl Bergemann and Kate E
 
 **File:** `ada-jansen.jpg` (400 x 550 px, JPEG, black and white)
 - Zip member: `uploads/2023/11/Ada-Jansen.jpg`. The filename names her, and the old site shows it beside "Ada Jansen" in the Governing Board section.
+
+## Added 2026-09-25
+
+### lauren-stevens-harris
+
+**File:** `lauren-stevens-harris.webp` (400 x 400 px, WebP, black and white, white background)
+- Zip member: `uploads/2023/05/LEAP-May-2023-1-bw.webp`
+- Identification: the filename carries no name. On the old site (leapstellenbosch.org.za, fetched 2026-09-25) the team section places this image directly above the heading "Lauren Stevens" with the label "PhD student", the same image-then-heading pattern used for Karl Bergemann and Kate Ekama. She has since married and uses the name Stevens-Harris.
+- 400 px is the largest version in the backup.
