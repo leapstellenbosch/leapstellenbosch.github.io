@@ -1,0 +1,52 @@
+# The quotations on the home page, each over an archival photograph.
+# Each visit draws one at random. The first entry is the one shown if a
+# browser has JavaScript switched off.
+#
+# text     the quotation, without quotation marks
+# by       who said or wrote it
+# source   where and when
+# image    file name in assets/img/archive/, without -1800.webp. The files are made
+#          by tools/treat-images.py (see the QUOTES list there).
+# caption  the photograph's archive reference, as the Western Cape Archives gives it
+
+- text: No man can know where he is going unless he knows exactly where he has been and exactly how he arrived at his present place.
+  by: Maya Angelou
+  source: "1972"
+  image: quote-e7841
+  caption: "E7841, Convicts picking grapes, Groot Constantia. Western Cape Archives and Records Service"
+
+- text: The past is never dead. It's not even past.
+  by: William Faulkner
+  source: Requiem for a Nun, 1951
+  image: quote-e1207
+  caption: "E1207, Old house, Dorp Street, Stellenbosch. Western Cape Archives and Records Service"
+
+- text: "[A] new society cannot be created by reproducing the repugnant past, however refined or enticingly repackaged."
+  by: Nelson Mandela
+  source: Nobel Lecture, 1993
+  image: quote-e5321
+  caption: "E5321, Toneel in Zululand. Western Cape Archives and Records Service"
+
+- text: So that's why we study economic history, not just to describe what happened, but also to understand why it happened.
+  by: Leonard Wantchekon
+  source: LEAP documentary, 2024
+  image: quote-e7894
+  caption: "E7894, Dr Jameson addressing railway workers, Salt River, 1905. Western Cape Archives and Records Service"
+
+- text: South Africa has advanced politically by disasters and economically by windfalls.
+  by: C. W. de Kiewiet
+  source: A History of South Africa, Social and Economic, 1941
+  image: quote-e8110
+  caption: "E8110, Transporting wool at Wolseley. Western Cape Archives and Records Service"
+
+- text: "Agency has many dimensions: it concerns political participation, but also the degree to which people can decide about their marriage. It is related to economic decision-making, free access to markets and how much coercion there is in the organization of the labour supply, but also to the development of a civil society."
+  by: Jan Luiten van Zanden
+  source: In Good Company, Economic History of Developing Regions
+  image: quote-e8308
+  caption: "E8308, Parade sales, Cape Town. Western Cape Archives and Records Service"
+
+- text: The philosopher David Hume once said that there's a huge difference between someone telling you about something and you actually experiencing it yourself.
+  by: James Robinson
+  source: Stellenbosch University graduation, March 2024
+  image: quote-e8615
+  caption: "E8615, Sifting diamonds, Kimberley. Western Cape Archives and Records Service"

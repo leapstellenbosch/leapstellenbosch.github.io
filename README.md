@@ -59,6 +59,7 @@ _data/projects.yml          project sections; the first four also appear on Home
 _data/publications.yml      journal articles first, then working papers; history papers only
 _data/datasets.yml          the data index (one row per paper) on the Data page
 _data/hero.yml              the 25 archival sources behind the letters on Home, with captions
+_data/quotes.yml            the seven quotations on Home, each paired with an Elliott Collection photograph
 _data/gallery.yml           LEAP's own photographs in the About band on Home, with captions
 _layouts/                   default.html (page shell), post.html (a news item)
 _includes/                  nav, footer, page head, cards, paper rows, project sections, picture
@@ -131,7 +132,7 @@ The treated images are committed, so this is needed only when a source changes o
 
 ```
 python tools/treat-images.py            # everything
-python tools/treat-images.py hero       # only the Home letters; also: archive, projects, faces, gallery, card
+python tools/treat-images.py hero       # only the Home letters; also: archive, projects, faces, gallery, quotes, card
 python tools/make-motifs.py
 ```
 

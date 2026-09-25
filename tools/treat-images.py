@@ -46,8 +46,20 @@ ARCHIVE = {
     # Section motifs
     "motif-e":  (r"Photos\Limited Liability\Swaziland Concession.jpeg", "earth", (0.10, 0.22, 0.92, 0.80), 0),
     "motif-a":  (r"Photos\Website photos\Archive.jpg",             "blue",  (0.04, 0.10, 0.86, 0.70), 0),
-    # Quote band
-    "quote":    (r"Photos\Lab\high-res\LEAP lab 03.jpg",           "maroon", (0.00, 0.05, 1.00, 0.95), 0),
+}
+
+# ---- Quote band: one Elliott Collection photograph behind each quotation in _data/quotes.yml.
+# stem -> (file in DATA\Archive photos\Elliot Collection, crop box l,t,r,b). Crops are about 2:1
+# and leave out the archive stamps and card edges.
+ELLIOTT = Path(r"C:\Users\johanf\Dropbox\3 Data\Archive photos\Elliot Collection")
+QUOTES = {
+    "quote-e1207": ("E1207 Old house, Dorp Street, Stellenbosch.tif",                         (0.00, 0.08, 1.00, 0.78)),
+    "quote-e5321": ("E5321 Front Toneel in Zululand.tif",                                     (0.00, 0.15, 1.00, 0.82)),
+    "quote-e7841": ("E7841 Front Convicts Picking grapes - Groot Constantia..tif",            (0.00, 0.28, 0.98, 0.97)),
+    "quote-e7894": ("E7894 Front Dr Jameson Addressing Railway Workers - Salt River (1905)..tif", (0.00, 0.30, 1.00, 1.00)),
+    "quote-e8110": ("E8110 Front Transporting Wool at Wolseley.tif",                          (0.02, 0.22, 0.99, 0.92)),
+    "quote-e8308": ("E8308 Front Parade Sales - Cape Town..tif",                              (0.00, 0.26, 1.00, 0.93)),
+    "quote-e8615": ("E8615 Front Sifting Diamonds - Kimberley.tif",                           (0.00, 0.12, 1.00, 0.82)),
 }
 
 # ---- Home page letters: several sources per letter, one drawn at random on each visit.
@@ -278,6 +290,10 @@ if __name__ == "__main__":
             headshot(src, cx, cy, s, OUT / "team" / f"{key}.jpg"); print("team", key)
         for key, (src, cx, cy, s) in BOARD.items():
             headshot(src, cx, cy, s, OUT / "board" / f"{key}.jpg"); print("board", key)
+    if want("quotes"):
+        for stem, (src, box) in QUOTES.items():
+            export(duotone(load(ELLIOTT / src, box), "maroon", vignette=0.2), stem, OUT / "archive")
+            print("quote", stem)
     if want("gallery"):
         (OUT / "gallery").mkdir(parents=True, exist_ok=True)
         for stem, (src, box) in GALLERY.items():

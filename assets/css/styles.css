@@ -447,15 +447,18 @@ a.paper__title:hover, .paper__title a:hover{ color:var(--ink); text-decoration:u
 /* =============================================================================
    QUOTE BAND + SU BAND
    ========================================================================== */
-.quote{ padding-block:clamp(6rem,13vw,11rem); text-align:center; isolation:isolate; overflow:hidden; }
-.quote::before{
-  content:""; position:absolute; inset:0; z-index:-2; background-size:cover; background-position:center;
-  background-image:url("../img/archive/quote-1800.jpg");
-  background-image:image-set(url("../img/archive/quote-1800.webp") type("image/webp"), url("../img/archive/quote-1800.jpg") type("image/jpeg"));
-}
-.quote::after{ content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg, var(--ink) 0%, rgba(18,10,14,.78) 30%, rgba(66,22,40,.82) 100%); }
-.quote blockquote{ max-width:24ch; margin-inline:auto; font-family:var(--serif); font-style:italic; font-weight:300; font-size:clamp(1.7rem,3.6vw,2.9rem); line-height:1.25; color:#fff; max-width:32ch; }
-.quote cite{ display:block; margin-top:2rem; font-style:normal; }
+.quote{ position:relative; padding-block:clamp(6rem,13vw,11rem); text-align:center; isolation:isolate; overflow:hidden; }
+/* One archival photograph per quotation (_data/quotes.yml), toned maroon and darkened enough for white text */
+.quote__bg{ position:absolute; inset:0; z-index:-2; background-size:cover; background-position:center; background-color:var(--maroon-deep); }
+.quote::after{ content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg, var(--ink) 0%, rgba(18,10,14,.66) 26%, rgba(18,10,14,.62) 60%, rgba(66,22,40,.8) 100%); }
+.quote__q{ margin-inline:auto; max-width:32ch; }
+.quote__text{ font-family:var(--serif); font-style:italic; font-weight:300; font-size:clamp(1.7rem,3.6vw,2.9rem); line-height:1.25; color:#fff; text-shadow:0 1px 18px rgba(18,10,14,.6); }
+.quote__q--long{ max-width:46ch; }
+.quote__q--long .quote__text{ font-size:clamp(1.3rem,2.4vw,1.95rem); line-height:1.35; }
+.quote__by{ margin-top:2rem; display:flex; flex-wrap:wrap; justify-content:center; align-items:baseline; gap:.3rem .9rem; }
+.quote__by cite{ font-style:normal; color:var(--gold-soft); text-shadow:0 1px 10px rgba(18,10,14,.8); }
+.quote__source{ font-size:.86rem; color:var(--paper-text); text-shadow:0 1px 10px rgba(18,10,14,.8); }
+.quote__caption{ position:absolute; right:var(--pad); bottom:1.1rem; left:var(--pad); text-align:right; font-size:.72rem; color:var(--paper-dim); }
 
 .su-band{ padding-block:clamp(3.5rem,7vw,5.5rem); }
 .su-band__inner{ display:grid; grid-template-columns:minmax(0,520px) 1fr; gap:clamp(2rem,6vw,5rem); align-items:center; }

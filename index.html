@@ -151,14 +151,33 @@ description: "LEAP, the Laboratory for the Economics of Africa's Past at Stellen
   </div>
 </section>
 
+{%- assign q = site.data.quotes.first %}
 <section class="quote" aria-label="Quotation">
+  <div class="quote__bg" style="background-image:url('{{ '/assets/img/archive/' | relative_url }}{{ q.image }}-1800.webp')"></div>
   <div class="wrap reveal">
-    <blockquote>
-      “{{ s.quote.text }}”
-      <cite class="label">{{ s.quote.by }}</cite>
+    <blockquote class="quote__q">
+      <p class="quote__text">“{{ q.text }}”</p>
+      <footer class="quote__by"><cite class="label">{{ q.by }}</cite> <span class="quote__source">{{ q.source }}</span></footer>
     </blockquote>
   </div>
+  <p class="quote__caption">{{ q.caption }}</p>
 </section>
+{%- comment -%} Draw one of the quotations in _data/quotes.yml, with its photograph, on every visit. {%- endcomment %}
+<script>
+  (function () {
+    var list = {{ site.data.quotes | jsonify }}, base = "{{ '/assets/img/archive/' | relative_url }}";
+    if (!list || list.length < 2) return;
+    var q = list[Math.floor(Math.random() * list.length)], band = document.querySelector(".quote");
+    if (!band) return;
+    var w = window.innerWidth < 700 ? "900" : "1800";
+    band.querySelector(".quote__bg").style.backgroundImage = "url('" + base + q.image + "-" + w + ".webp')";
+    band.querySelector(".quote__text").textContent = "“" + q.text + "”";
+    band.querySelector(".quote__by cite").textContent = q.by;
+    band.querySelector(".quote__source").textContent = q.source || "";
+    band.querySelector(".quote__caption").textContent = q.caption || "";
+    if (q.text.length > 180) band.querySelector(".quote__q").classList.add("quote__q--long");
+  })();
+</script>
 
 <section class="band--paper su-band" aria-label="Stellenbosch University">
   <div class="wrap su-band__inner reveal">
