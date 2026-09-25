@@ -33,4 +33,4 @@ Only economic history papers by LEAP team members go in `_data/publications.yml`
 
 ## The team is fixed by Johan
 
-The Team page lists exactly the people in `_data/team.yml`: no affiliates or research associates. Do not add or remove people, board members or projects without Johan's instruction.
+The Team page shows photo cards for exactly the people in `_data/team.yml`, and below them, by name only, the extraordinary professors and research affiliates in `_data/affiliates.yml`. Do not add or remove people, board members or projects without Johan's instruction.

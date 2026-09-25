@@ -5,6 +5,7 @@ Everything on the site apart from news lives in eight small text files in the `_
 | File | What it controls |
 |---|---|
 | `_data/team.yml` | The team cards on the Team page |
+| `_data/affiliates.yml` | The extraordinary professors and research affiliates, listed by name (with a link) on the Team page |
 | `_data/board.yml` | The Governing Board |
 | `_data/alumni.yml` | The table of PhD graduates |
 | `_data/projects.yml` | The project sections on the Research page; the first four also appear on the home page |

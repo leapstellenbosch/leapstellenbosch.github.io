@@ -57,6 +57,7 @@ _data/site.yml              slogan, mission, addresses, links, social accounts, 
 _data/team.yml  board.yml  alumni.yml         people
 _data/projects.yml          project sections; the first four also appear on Home
 _data/publications.yml      journal articles first, then working papers; history papers only
+_data/affiliates.yml        extraordinary professors and research affiliates (names and links, Team page)
 _data/datasets.yml          the data index (one row per paper) on the Data page
 _data/hero.yml              the 25 archival sources behind the letters on Home, with captions
 _data/lectures.yml          every LEAP Lecture since 2016 (the Lectures page), with YouTube ids

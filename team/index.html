@@ -14,6 +14,27 @@ description: "The LEAP team, its Governing Board and the PhDs the lab has gradua
         {%- include person-card.html person=person -%}
       {%- endfor %}
     </ul>
+
+    {%- assign extra = site.data.affiliates | where: "role", "Extraordinary professor" %}
+    {%- assign affil = site.data.affiliates | where: "role", "Research affiliate" %}
+    <div class="affil reveal" aria-label="Extraordinary professors and research affiliates">
+      <div>
+        <h2 class="label label--accent">Extraordinary {% if extra.size == 1 %}professor{% else %}professors{% endif %}</h2>
+        <ul class="affil__list">
+          {%- for p in extra %}
+          <li><a href="{{ p.url }}" rel="noopener">{{ p.name }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <div>
+        <h2 class="label label--accent">Research affiliates</h2>
+        <ul class="affil__list affil__list--cols">
+          {%- for p in affil %}
+          <li><a href="{{ p.url }}" rel="noopener">{{ p.name }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 

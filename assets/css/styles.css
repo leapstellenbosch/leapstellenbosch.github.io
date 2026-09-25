@@ -355,6 +355,14 @@ a.card:hover .card__img{ transform:scale(1.03); }
 .alumni td:nth-child(2){ color:#fff; font-weight:600; white-space:nowrap; }
 .alumni tr:hover td{ background:rgba(255,255,255,.02); }
 
+/* Team: extraordinary professors and research affiliates, names only */
+.affil{ display:grid; grid-template-columns:1fr 2fr; gap:2rem clamp(2rem,5vw,5rem); margin-top:clamp(3.5rem,7vw,5.5rem); padding-top:2.2rem; border-top:1px solid var(--hair-gold); }
+.affil__list{ margin-top:1.2rem; display:grid; gap:.7rem; }
+.affil__list--cols{ grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:2.5rem; }
+.affil__list a{ font-weight:300; font-size:1.2rem; color:#fff; border-bottom:1px solid transparent; transition:border-color .25s var(--ease), color .25s var(--ease); }
+.affil__list a::after{ content:"\2197"; margin-left:.35em; font-size:.8em; color:var(--accent-text); }
+.affil__list a:hover, .affil__list a:focus-visible{ color:var(--gold-soft); border-bottom-color:var(--hair-gold); }
+
 /* LEAP Lectures: the next lecture, then a register of every lecture on a gold spine */
 .lec-next{ display:grid; grid-template-columns:auto 1fr; gap:clamp(2rem,5vw,4.5rem); align-items:center; }
 .lec-next__img{ width:clamp(150px,18vw,220px); height:auto; filter:grayscale(1); outline:1px solid var(--hair-gold); outline-offset:10px; }
@@ -603,6 +611,7 @@ a.paper__title:hover, .paper__title a:hover{ color:var(--ink); text-decoration:u
   .footer__brand{ grid-column:1 / -1; }
 }
 @media (max-width:680px){
+  .affil, .affil__list--cols{ grid-template-columns:1fr; }
   .lec-next{ grid-template-columns:1fr; }
   .register::before{ left:0; }
   .register .lec{ grid-template-columns:1fr; gap:1rem; padding-left:1.4rem; }

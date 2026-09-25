@@ -1,0 +1,38 @@
+# Extraordinary professors and research affiliates, listed by name on the Team page (no photos).
+# Edit in the browser: see HOW-TO-EDIT-CONTENT.md
+#
+# name  as the person writes it
+# role  Extraordinary professor, or Research affiliate
+# url   the person's own website, or their university page
+
+- name: Jan Luiten van Zanden
+  role: Extraordinary professor
+  url: https://www.uu.nl/staff/JLvanZanden
+
+- name: Marianne Wanamaker
+  role: Research affiliate
+  url: https://baker.utk.edu/overview/directory/marianne-wanamaker/
+
+- name: Martine Mariotti
+  role: Research affiliate
+  url: https://rse.anu.edu.au/people/martine-mariotti
+
+- name: Erik Green
+  role: Research affiliate
+  url: https://www.lusem.lu.se/erik-green
+
+- name: Leigh Gardner
+  role: Research affiliate
+  url: https://www.leighgardner.com
+
+- name: Johannes Norling
+  role: Research affiliate
+  url: https://www.mtholyoke.edu/directory/faculty-staff/johannes-norling
+
+- name: Abel Gwaindepi
+  role: Research affiliate
+  url: https://www.diis.dk/en/experts/abel-gwaindepi
+
+- name: Kara Dimitruk
+  role: Research affiliate
+  url: https://www.karadimitruk.com/
